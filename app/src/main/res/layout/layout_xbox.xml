@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
 
     <ScrollView
@@ -23,8 +24,7 @@
                     android:id="@+id/imageView3"
                     android:layout_width="150dp"
                     android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifa"
-                    android:background="@drawable/gradient"/>
+                    app:srcCompat="@drawable/gowlog" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -54,8 +54,7 @@
                     android:id="@+id/imageView8"
                     android:layout_width="150dp"
                     android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifa"
-                    android:background="@drawable/gradient"/>
+                    app:srcCompat="@drawable/fifa" />
 
 
                 <TextView
@@ -87,8 +86,7 @@
                     android:id="@+id/imageView5"
                     android:layout_width="150dp"
                     android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifa"
-                    android:background="@drawable/gradient"/>
+                    app:srcCompat="@drawable/halolog" />
 
 
                 <TextView
@@ -96,37 +94,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView5"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Street Fighter"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rvHalo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/rvOverwatchXbox"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="16dp">
-
-                <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="150dp"
-                    android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifa"
-                    android:background="@drawable/gradient"/>
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageView10"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif"
@@ -149,8 +116,7 @@
                     android:id="@+id/imageView7"
                     android:layout_width="150dp"
                     android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifa"
-                    android:background="@drawable/gradient"/>
+                    app:srcCompat="@drawable/overlog" />
 
 
                 <TextView

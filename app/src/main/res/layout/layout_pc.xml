@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
 
 
     <ScrollView
@@ -87,7 +88,7 @@
                     android:id="@+id/imageView5"
                     android:layout_width="150dp"
                     android:layout_height="125dp"
-                    app:srcCompat="@drawable/qappla2" />
+                    app:srcCompat="@drawable/gowlog" />
 
 
                 <TextView
@@ -98,7 +99,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif"
-                    android:text="CounterStrike"
+                    android:text="Gears of War"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
@@ -166,37 +167,6 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif"
                     android:text="Overwatch"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/rvGearsPc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true">
-
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="150dp"
-                    android:layout_height="125dp"
-                    app:srcCompat="@drawable/gowlog" />
-
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/imageView4"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Gears Of War"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>

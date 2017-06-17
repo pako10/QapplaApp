@@ -21,7 +21,6 @@ public class PcFragment extends Fragment {
     RelativeLayout rvLol;
     RelativeLayout rvOverwatch;
     RelativeLayout rvCs;
-    RelativeLayout rvGears;
     RelativeLayout rvFifa;
 
     Context mContext;
@@ -33,7 +32,6 @@ public class PcFragment extends Fragment {
 
         rvCs = (RelativeLayout) view.findViewById(R.id.rvCsPc);
         rvHearthstone = (RelativeLayout) view.findViewById(R.id.rvHearthStonePc);
-        rvGears = (RelativeLayout) view.findViewById(R.id.rvGearsPc);
         rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvOwerwatchPc);
         rvFifa = (RelativeLayout) view.findViewById(R.id.rvFifaPc);
         rvLol = (RelativeLayout) view.findViewById(R.id.rvLolPc);
@@ -77,22 +75,6 @@ public class PcFragment extends Fragment {
             }
         });
 
-        rvGears.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
-                bundle.putString("game", "Gears of War");
-
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
 
         rvOverwatch.setOnClickListener(new View.OnClickListener() {
             @Override

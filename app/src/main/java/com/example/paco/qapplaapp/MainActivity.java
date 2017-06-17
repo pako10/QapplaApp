@@ -75,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
         floatingSearchView = (FloatingSearchView) findViewById(R.id.searchViewQappla);
 
+
+
+
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             platform = extras.getString("platform");

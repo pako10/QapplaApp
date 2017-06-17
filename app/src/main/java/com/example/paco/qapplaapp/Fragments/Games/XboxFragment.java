@@ -19,7 +19,6 @@ public class XboxFragment extends Fragment {
     RelativeLayout rvOverwatch;
     RelativeLayout rvFifa;
     RelativeLayout rvGears;
-    RelativeLayout rvStreet;
     RelativeLayout rvhalo;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -28,8 +27,7 @@ public class XboxFragment extends Fragment {
         rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvOverwatchXbox);
         rvFifa = (RelativeLayout) view.findViewById(R.id.rvFifaXbox);
         rvGears = (RelativeLayout) view.findViewById(R.id.rvGearsXbox);
-        rvStreet = (RelativeLayout) view.findViewById(R.id.rvStreetXbox);
-        rvhalo = (RelativeLayout) view.findViewById(R.id.rvHalo);
+        rvhalo = (RelativeLayout) view.findViewById(R.id.rvStreetXbox);
 
 
         gameSearchClick();
@@ -89,22 +87,6 @@ public class XboxFragment extends Fragment {
             }
         });
 
-        rvStreet.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "xBox");
-                bundle.putString("game", "Street Fighter");
-
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();
-            }
-        });
 
         rvhalo.setOnClickListener(new View.OnClickListener() {
             @Override
