@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "779347879760",
+    "firebase_url": "https://qapplaapp.firebaseio.com",
+    "project_id": "qapplaapp",
+    "storage_bucket": "qapplaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779347879760:android:b1d06accd2613b1d",
+        "android_client_info": {
+          "package_name": "com.example.paco.qapplaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779347879760-lc2dfu0ekqqn5pf820ogq9jfab6e744t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.paco.qapplaapp",
+            "certificate_hash": "5fec3e53c686bcc70f7d62faee8383f7ca657a62"
+          }
+        },
+        {
+          "client_id": "779347879760-3uud8furtp2778sskfhabbtqmg4qdlma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKHbcGhEt1eg5eQg9_RuS3Q7OlX9gwBos"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779347879760-3uud8furtp2778sskfhabbtqmg4qdlma.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

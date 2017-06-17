@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/search_fragment"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:alpha="0.5"
+        android:id="@+id/imgGears"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/halo"
+        android:layout_below="@+id/imgCallofDuty"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:alpha="0.5"
+        android:id="@+id/imgOverwatch"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/halo" />
+
+    <ImageView
+        android:alpha="0.5"
+        android:id="@+id/imgCallofDuty"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/halo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:alpha="0.5"
+        android:id="@+id/imgFifa"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/halo"
+        android:layout_alignTop="@+id/imgGears"
+        android:layout_alignLeft="@+id/imgCallofDuty"
+        android:layout_alignStart="@+id/imgCallofDuty" />
+
+    <ImageView
+        android:id="@+id/imgHalo"
+        android:alpha="0.5"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/halo"
+        android:layout_alignTop="@+id/imgFifa"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:alpha="0.5"
+        android:id="@+id/imgStreet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/halo"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgGears"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/relativeLayout8">
+
+        <Button
+            android:id="@+id/btXboxSearch"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Xbox"
+            android:background="@drawable/selected_incomplete_round_button"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btPs4Search"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btXboxSearch"
+            android:layout_toEndOf="@+id/btXboxSearch"
+            android:layout_toRightOf="@+id/btXboxSearch"
+            android:text="Ps4"
+            android:background="#fff"/>
+
+        <Button
+            android:id="@+id/btPcSearch"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btPs4Search"
+            android:layout_toEndOf="@+id/btPs4Search"
+            android:layout_toRightOf="@+id/btPs4Search"
+            android:text="Pc"
+            android:background="@drawable/right_incomplete_round_button"/>
+
+    </RelativeLayout>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_below="@+id/relativeLayout8"
+        android:layout_toRightOf="@+id/textView14"
+        android:layout_toEndOf="@+id/textView14"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/switch1"
+        android:layout_alignLeft="@+id/switch1"
+        android:layout_alignStart="@+id/switch1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/switch2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="En linea"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/switch2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="Buscando Equipo/Integrante"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btBuscar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:visibility="gone"
+        android:background="@drawable/round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>
