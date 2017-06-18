@@ -13,6 +13,7 @@ import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -101,7 +102,15 @@ public class RegistryActivity extends AppCompatActivity {
 
                // regiterUser();
 
-                verifyData();
+                if(!isEmailValid(etEmail.getText().toString())){
+                    String emailError = "Formato de correo inválido.";
+                    alertErrorData(emailError);
+                    return;
+                }else {
+
+                        verifyData();
+
+                }
                 //createUser();
             }
         });
@@ -123,10 +132,10 @@ public class RegistryActivity extends AppCompatActivity {
     public void verifyData(){
         String pass = etPass.getText().toString();
         String cPass = etConfirmPass.getText().toString();
-        if (!userExist()) {
-            alertConfirmUserName();
-        }else if (!pass.equals(cPass)){
+
+        if (!pass.equals(cPass)){
             alertConfirmPass();
+
         }else {
             register();
         }
@@ -287,8 +296,6 @@ public class RegistryActivity extends AppCompatActivity {
                 for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
                     String userName = (String) userSnapshot.child("userName").getValue();
 
-
-
                     String userNameUpper = userName.toLowerCase();
                     String etUserUpper = userame.toLowerCase();
 
@@ -307,6 +314,77 @@ public class RegistryActivity extends AppCompatActivity {
             }
         });
         return exist;
+    }
+
+    public boolean userExist2(){
+
+        exist = false;
+        final String userame = etUserName.getText().toString();
+        //Query query = mUsersDatabaseReference.orderByChild("userName").equalTo(userame);
+
+        Toast.makeText(this, "entra aqui", Toast.LENGTH_SHORT).show();
+        mUsersDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot userSnapshot: dataSnapshot.getChildren()) {
+                    String userName = (String) userSnapshot.child("userName").getValue();
+
+                    String userNameUpper = userName.toLowerCase();
+                    String etUserUpper = userame.toLowerCase();
+
+                    Toast.makeText(RegistryActivity.this, userNameUpper + " " + etUserUpper, Toast.LENGTH_SHORT).show();
+                    if (etUserUpper.equals(userNameUpper)){
+                        Toast.makeText(RegistryActivity.this, "aca no ENTRA", Toast.LENGTH_SHORT).show();
+                        exist = true;
+                    }
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+        return exist;
+    }
+
+    public void userExist3(){
+
+        exist = false;
+        final String userame = etUserName.getText().toString();
+        //Query query = mUsersDatabaseReference.orderByChild("userName").equalTo(userame);
+
+        mUsersDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                search:
+                {
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        String userName = (String) userSnapshot.child("userName").getValue();
+
+                        String userNameUpper = userName.toLowerCase();
+                        String etUserUpper = userame.toLowerCase();
+
+                        if (etUserUpper.equals(userNameUpper)) {
+                            alertConfirmUserName();
+                            exist = true;
+                            break search;
+                        }else {
+                            exist = false;
+                        }
+
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 
@@ -535,6 +613,23 @@ public class RegistryActivity extends AppCompatActivity {
         alert.show();
     }
 
+    public boolean isEmailValid(CharSequence email){
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void alertErrorData(String Error){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(Error)
+                .setCancelable(false)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+        alert = builder.create();
+        alert.show();
+    }
 
     /**ANIMATION CLOSE**7
      *

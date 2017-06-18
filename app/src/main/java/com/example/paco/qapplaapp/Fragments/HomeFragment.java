@@ -1,8 +1,9 @@
 package com.example.paco.qapplaapp.Fragments;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
+
+
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -13,12 +14,18 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 
 
+import android.support.design.widget.TabLayout;
 
-
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
@@ -38,28 +45,92 @@ import com.example.paco.qapplaapp.Utils.OnSwipeTouchListener;
 
 public class HomeFragment extends Fragment {
 
-    Button btXbox;
+   /* Button btXbox;
     Button btPs4;
-    Button btPc;
+    Button btPc;*/
     RelativeLayout rvContent;
     RelativeLayout rvSearchBox;
+    ImageView imgSearch;
 
     FloatingSearchView floatingSearchView;
+
+    TabLayout tabs;
+    ViewPager viewPager;
 
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         final View view = inflater.inflate(R.layout.layout_home,container,false);
 
-        btXbox = (Button) view.findViewById(R.id.btXbox);
+       /* btXbox = (Button) view.findViewById(R.id.btXbox);
         btPs4 = (Button) view.findViewById(R.id.btPs4);
-        btPc = (Button) view.findViewById(R.id.btPc);
+        btPc = (Button) view.findViewById(R.id.btPc);*/
         final Context mContext = getActivity().getApplicationContext();
         floatingSearchView = (FloatingSearchView) view.findViewById(R.id.searchViewQappla);
         rvContent = (RelativeLayout) view.findViewById(R.id.rvContent);
         rvSearchBox = (RelativeLayout) view.findViewById(R.id.rvSearchBox);
+        imgSearch = (ImageView) view.findViewById(R.id.imgSearch);
 
-        btXbox.setSelected(true);
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                DialogSearchFragment frag = new DialogSearchFragment();
+                frag.show(ft,"txn_tag");
+            }
+        });
+
+        tabs = (TabLayout) view.findViewById(R.id.tabs);
+
+        tabs.addTab(tabs.newTab().setIcon(R.drawable.xboxactivo));
+        tabs.addTab(tabs.newTab().setIcon(R.drawable.ps4));
+        tabs.addTab(tabs.newTab().setIcon(R.drawable.pc));
+
+        viewPager = (ViewPager) view.findViewById(R.id.containerF);
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
+
+
+        PagerPeda adapter = new PagerPeda(getFragmentManager(),tabs.getTabCount());
+
+        viewPager.setAdapter(adapter);
+
+        tabs.setOnTabSelectedListener(
+                new TabLayout.OnTabSelectedListener() {
+                    @Override
+                    public void onTabSelected(TabLayout.Tab tab) {
+                        // ...
+                        viewPager.setCurrentItem(tab.getPosition());
+                        int position = tab.getPosition();
+                        if (position == 0){
+                            tab.setIcon(R.drawable.xboxactivo);
+                            tabs.getTabAt(1).setIcon(R.drawable.ps4);
+                            tabs.getTabAt(2).setIcon(R.drawable.pc);
+                        }
+                        if (position == 1){
+                            tab.setIcon(R.drawable.ps4activo);
+                            tabs.getTabAt(0).setIcon(R.drawable.xbox);
+                            tabs.getTabAt(2).setIcon(R.drawable.pc);
+                        }
+                        if (position == 2){
+                            tab.setIcon(R.drawable.pcactivo);
+                            tabs.getTabAt(0).setIcon(R.drawable.xbox);
+                            tabs.getTabAt(1).setIcon(R.drawable.ps4);
+                        }
+                    }
+
+                    @Override
+                    public void onTabUnselected(TabLayout.Tab tab) {
+                        // ...
+                    }
+
+                    @Override
+                    public void onTabReselected(TabLayout.Tab tab) {
+                        // ...
+                    }
+                }
+        );
+
+       /* btXbox.setSelected(true);
 
         rvSearchBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +139,7 @@ public class HomeFragment extends Fragment {
                 DialogSearchFragment frag = new DialogSearchFragment();
                 frag.show(ft, "txn_tag");
               /*  Intent i = new Intent(mContext, SearchActivity.class);
-                startActivity(i);*/
+                startActivity(i);
 
             }
         });
@@ -129,14 +200,54 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(mContext, "bottom", Toast.LENGTH_SHORT).show();
             }
 
-        });
+        });*/
 
 
 
         return view;
     }
 
-    public void onXboxSelected(){
+    public static class PagerPeda extends FragmentPagerAdapter {
+
+        //integer to count number of tabs
+        int tabCount;
+
+        //Constructor to the class
+        public PagerPeda(android.support.v4.app.FragmentManager fm, int tabCount) {
+            super(fm);
+            //Initializing tab count
+            this.tabCount= tabCount;
+        }
+
+        //Overriding method getItem
+        @Override
+        public android.support.v4.app.Fragment getItem(int position) {
+            //Returning the current tabs
+            switch (position) {
+                case 0:
+                    XboxFragment xbox = new XboxFragment();
+                    return xbox;
+
+                case 1:
+                    Ps4Fragment ps4 = new Ps4Fragment();
+                    return ps4;
+                case 2:
+                    PcFragment pc = new PcFragment();
+                    return pc;
+
+                default:
+                    return null;
+            }
+        }
+
+        //Overriden method getCount to get the number of tabs
+        @Override
+        public int getCount() {
+            return tabCount;
+        }
+    }
+
+   /* public void onXboxSelected(){
         setFragment(2);
         Drawable background = btXbox.getBackground();
         if (background instanceof ShapeDrawable) {
@@ -244,15 +355,15 @@ public class HomeFragment extends Fragment {
         btPc.setSelected(true);
         btXbox.setSelected(false);
         btPs4.setSelected(false);
-    }
+    }*/
 
 
 
 
 
-    public void setFragment(int position){
-        FragmentManager fragmentManager;
-        FragmentTransaction fragmentTransaction;
+   /* public void setFragment(int position){
+        android.app.FragmentManager fragmentManager;
+        android.app.FragmentTransaction fragmentTransaction;
         switch (position){
             case 0:
                 fragmentManager = getFragmentManager();
@@ -276,7 +387,7 @@ public class HomeFragment extends Fragment {
                 fragmentTransaction.commit();
                 break;
         }
-    }
+    }*/
 
     /*@Override
     public void onResume() {

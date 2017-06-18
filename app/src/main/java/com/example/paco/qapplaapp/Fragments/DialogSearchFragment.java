@@ -1,7 +1,7 @@
 package com.example.paco.qapplaapp.Fragments;
 
+
 import android.app.Dialog;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,6 +10,9 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -30,7 +33,7 @@ import com.example.paco.qapplaapp.Utils.OnSwipeTouchListener;
  * Created by paco on 24/05/2017.
  */
 
-public class DialogSearchFragment extends DialogFragment{
+public class DialogSearchFragment extends DialogFragment {
 
     //STRING PARA SABER QUE JUEGO HA SIDO SELECCIONADO PARA ENVIAR A LA BUSQUEDA
     String selectedGame = "";
@@ -68,7 +71,7 @@ public class DialogSearchFragment extends DialogFragment{
     ImageView imgLast1;
     ImageView imgLast2;
 
-    ImageView imgGame1, imgGame2, imgGame3,imgGame4,imgGame5,imgGame6;
+    ImageView imgGame1, imgGame2, imgGame3,imgGame4,imgGame5;
     FloatingSearchView floatingSearchViewQapla;
 
     @Override
@@ -84,7 +87,6 @@ public class DialogSearchFragment extends DialogFragment{
         imgGame3 = (ImageView) root.findViewById(R.id.imgCallofDuty);
         imgGame4 = (ImageView) root.findViewById(R.id.imgFifa);
         imgGame5 = (ImageView) root.findViewById(R.id.imgStreet);
-        imgGame6 = (ImageView) root.findViewById(R.id.imgHalo);
         floatingSearchViewQapla = (FloatingSearchView) root.findViewById(R.id.searchViewQappla);
         btBuscar = (Button) root.findViewById(R.id.btBuscar);
         btPc = (Button) root.findViewById(R.id.btPcSearch);
@@ -111,12 +113,21 @@ public class DialogSearchFragment extends DialogFragment{
 
                 );
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+                /*GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
+                gameSearchFragment2.setArguments(bundle);
+                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
+                fragmentTransaction.commit();
                 dismiss();
             }
         });
@@ -210,25 +221,27 @@ public class DialogSearchFragment extends DialogFragment{
     }
 
     public void onXboxSelected(){
-        imgGame5.setVisibility(View.VISIBLE);
-        imgGame6.setVisibility(View.GONE);
+        imgGame3.setVisibility(View.VISIBLE);
+        imgGame4.setVisibility(View.VISIBLE);
+        imgGame5.setVisibility(View.INVISIBLE);
         selectedPlatform = "xbox";
+        imgGame4.setImageResource(R.drawable.halolog);
 
 
         Drawable background = btXbox.getBackground();
         if (background instanceof ShapeDrawable) {
             // cast to 'ShapeDrawable'
             ShapeDrawable shapeDrawable = (ShapeDrawable) background;
-            shapeDrawable.getPaint().setColor(Color.GREEN);
+            shapeDrawable.getPaint().setColor(getResources().getColor(R.color.accent));
         } else if (background instanceof GradientDrawable) {
             // cast to 'GradientDrawable'
             GradientDrawable gradientDrawable = (GradientDrawable) background;
             //gradientDrawable.setColor(ContextCompat.getColor(mContext,R.color.colorPrimary));
-            gradientDrawable.setColor(Color.GREEN);
+            gradientDrawable.setColor(getResources().getColor(R.color.accent));
         } else if (background instanceof ColorDrawable) {
             // alpha value may need to be set again after this call
             ColorDrawable colorDrawable = (ColorDrawable) background;
-            colorDrawable.setColor(Color.GREEN);
+            colorDrawable.setColor(getResources().getColor(R.color.accent));
         }
 
 
@@ -257,17 +270,18 @@ public class DialogSearchFragment extends DialogFragment{
 
     public void onPs4Selected(){
 
+        imgGame3.setVisibility(View.INVISIBLE);
+        imgGame4.setVisibility(View.INVISIBLE);
         imgGame5.setVisibility(View.GONE);
-        imgGame6.setVisibility(View.GONE);
         selectedPlatform = "ps4";
 
         Drawable background2 = btPs4.getBackground();
         if (background2 instanceof ShapeDrawable) {
-            ((ShapeDrawable)background2).getPaint().setColor(Color.GREEN);
+            ((ShapeDrawable)background2).getPaint().setColor(getResources().getColor(R.color.accent));
         } else if (background2 instanceof GradientDrawable) {
-            ((GradientDrawable)background2).setColor(Color.GREEN);
+            ((GradientDrawable)background2).setColor(getResources().getColor(R.color.accent));
         } else if (background2 instanceof ColorDrawable) {
-            ((ColorDrawable)background2).setColor(Color.GREEN);
+            ((ColorDrawable)background2).setColor(getResources().getColor(R.color.accent));
         }
 
         Drawable background = btXbox.getBackground();
@@ -295,17 +309,19 @@ public class DialogSearchFragment extends DialogFragment{
 
     public void onPcSelected(){
 
-        imgGame6.setVisibility(View.VISIBLE);
+        imgGame3.setVisibility(View.VISIBLE);
+        imgGame4.setVisibility(View.VISIBLE);
         imgGame5.setVisibility(View.VISIBLE);
+        imgGame4.setImageResource(R.drawable.lolog);
         selectedPlatform = "pc";
 
         Drawable background3 = btPc.getBackground();
         if (background3 instanceof ShapeDrawable) {
-            ((ShapeDrawable)background3).getPaint().setColor(Color.GREEN);
+            ((ShapeDrawable)background3).getPaint().setColor(getResources().getColor(R.color.accent));
         } else if (background3 instanceof GradientDrawable) {
-            ((GradientDrawable)background3).setColor(Color.GREEN);
+            ((GradientDrawable)background3).setColor(getResources().getColor(R.color.accent));
         } else if (background3 instanceof ColorDrawable) {
-            ((ColorDrawable)background3).setColor(Color.GREEN);
+            ((ColorDrawable)background3).setColor(getResources().getColor(R.color.accent));
         }
 
         Drawable background2 = btPs4.getBackground();
@@ -338,12 +354,18 @@ public class DialogSearchFragment extends DialogFragment{
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(1f);
-                imgGame2.setAlpha(0.5f);
-                imgGame3.setAlpha(0.5f);
-                imgGame4.setAlpha(0.5f);
-                imgGame5.setAlpha(0.5f);
-                imgGame6.setAlpha(0.5f);
+
+                imgGame1.setImageResource(R.drawable.fifaactivo);
+                imgGame2.setImageResource(R.drawable.overlog);
+                imgGame3.setImageResource(R.drawable.gowlog);
+                imgGame5.setImageResource(R.drawable.hearthlog);
+
+                if (btXbox.isSelected()){
+                    imgGame4.setImageResource(R.drawable.halolog);
+                }else{
+                    imgGame4.setImageResource(R.drawable.lolog);
+                }
+
             }
         });
 
@@ -352,12 +374,17 @@ public class DialogSearchFragment extends DialogFragment{
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(0.5f);
-                imgGame2.setAlpha(1f);
-                imgGame3.setAlpha(0.5f);
-                imgGame4.setAlpha(0.5f);
-                imgGame5.setAlpha(0.5f);
-                imgGame6.setAlpha(0.5f);
+
+                imgGame1.setImageResource(R.drawable.fifalog);
+                imgGame2.setImageResource(R.drawable.overactivo);
+                imgGame3.setImageResource(R.drawable.gowlog);
+                imgGame5.setImageResource(R.drawable.hearthlog);
+
+                if (btXbox.isSelected()){
+                    imgGame4.setImageResource(R.drawable.halolog);
+                }else{
+                    imgGame4.setImageResource(R.drawable.lolog);
+                }
             }
         });
 
@@ -366,12 +393,17 @@ public class DialogSearchFragment extends DialogFragment{
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(0.5f);
-                imgGame2.setAlpha(0.5f);
-                imgGame3.setAlpha(1f);
-                imgGame4.setAlpha(0.5f);
-                imgGame5.setAlpha(0.5f);
-                imgGame6.setAlpha(0.5f);
+
+                imgGame1.setImageResource(R.drawable.fifalog);
+                imgGame2.setImageResource(R.drawable.overlog);
+                imgGame3.setImageResource(R.drawable.gowactivo);
+                imgGame5.setImageResource(R.drawable.hearthlog);
+
+                if (btXbox.isSelected()){
+                    imgGame4.setImageResource(R.drawable.halolog);
+                }else{
+                    imgGame4.setImageResource(R.drawable.lolog);
+                }
             }
         });
 
@@ -380,12 +412,17 @@ public class DialogSearchFragment extends DialogFragment{
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(0.5f);
-                imgGame2.setAlpha(0.5f);
-                imgGame3.setAlpha(0.5f);
-                imgGame4.setAlpha(1f);
-                imgGame5.setAlpha(0.5f);
-                imgGame6.setAlpha(0.5f);
+
+                imgGame1.setImageResource(R.drawable.fifalog);
+                imgGame2.setImageResource(R.drawable.overlog);
+                imgGame3.setImageResource(R.drawable.gowlog);
+                imgGame5.setImageResource(R.drawable.hearthlog);
+
+                if (btXbox.isSelected()){
+                    imgGame4.setImageResource(R.drawable.haloactivo);
+                }else{
+                    imgGame4.setImageResource(R.drawable.lolactivo);
+                }
             }
         });
 
@@ -394,27 +431,14 @@ public class DialogSearchFragment extends DialogFragment{
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(0.5f);
-                imgGame2.setAlpha(0.5f);
-                imgGame3.setAlpha(0.5f);
-                imgGame4.setAlpha(0.5f);
-                imgGame5.setAlpha(1f);
-                imgGame6.setAlpha(0.5f);
+                imgGame1.setImageResource(R.drawable.fifalog);
+                imgGame2.setImageResource(R.drawable.overlog);
+                imgGame3.setImageResource(R.drawable.gowlog);
+                imgGame4.setImageResource(R.drawable.lolog);
+                imgGame5.setImageResource(R.drawable.hearthactivo);
             }
         });
 
-        imgGame6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                floatingSearchViewQapla.setVisibility(View.GONE);
-                btBuscar.setVisibility(View.VISIBLE);
-                imgGame1.setAlpha(0.5f);
-                imgGame2.setAlpha(0.5f);
-                imgGame3.setAlpha(0.5f);
-                imgGame4.setAlpha(0.5f);
-                imgGame5.setAlpha(0.5f);
-                imgGame6.setAlpha(1f);
-            }
-        });
+
     }
 }

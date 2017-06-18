@@ -38,7 +38,9 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:theme="@style/MyEditTextTheme"
+        android:textColorHint="@color/colorWhite">
 
         <EditText
             android:id="@+id/etCity"
@@ -46,7 +48,10 @@
             android:layout_height="wrap_content"
             android:hint="Ciudad"
             android:singleLine="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:theme="@style/MyEditTextTheme"
+            android:textColor="@color/colorAccent"/>
+
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -62,7 +67,9 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp">
+        android:layout_marginRight="8dp"
+        android:theme="@style/MyEditTextTheme"
+        android:textColorHint="@color/colorWhite">
 
         <EditText
             android:id="@+id/etUserName"
@@ -73,7 +80,9 @@
             android:layout_alignParentStart="true"
             android:hint="Nombre de Usuario"
             android:singleLine="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:theme="@style/MyEditTextTheme"
+            android:textColor="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -87,7 +96,9 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
         app:layout_constraintRight_toRightOf="@+id/textInputLayout3"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textInputLayout3">
+        app:layout_constraintLeft_toLeftOf="@+id/textInputLayout3"
+        android:theme="@style/MyEditTextTheme"
+        android:textColorHint="@color/colorWhite">
 
         <EditText
             android:layout_width="match_parent"
@@ -96,7 +107,9 @@
             android:id="@+id/etEmail"
             android:inputType="textEmailAddress"
             android:singleLine="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:theme="@style/MyEditTextTheme"
+            android:textColor="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -110,7 +123,9 @@
         app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
         app:layout_constraintRight_toRightOf="@+id/textInputLayout4"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textInputLayout4">
+        app:layout_constraintLeft_toLeftOf="@+id/textInputLayout4"
+        android:theme="@style/MyEditTextTheme"
+        android:textColorHint="@color/colorWhite">
 
         <EditText
             android:layout_width="match_parent"
@@ -118,7 +133,9 @@
             android:hint="Contraseña"
             android:id="@+id/etPass"
             android:singleLine="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:theme="@style/MyEditTextTheme"
+            android:textColor="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -132,7 +149,9 @@
         tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="115dp"
         app:layout_constraintLeft_toLeftOf="@+id/textInputLayout5"
-        android:id="@+id/textInputLayout6">
+        android:id="@+id/textInputLayout6"
+        android:theme="@style/MyEditTextTheme"
+        android:textColorHint="@color/colorWhite">
 
         <EditText
             android:layout_width="match_parent"
@@ -140,7 +159,9 @@
             android:hint="Confirmar Contraseña"
             android:id="@+id/etConfirmPass"
             android:singleLine="true"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:theme="@style/MyEditTextTheme"
+            android:textColor="@color/colorAccent"/>
 
     </android.support.design.widget.TextInputLayout>
 

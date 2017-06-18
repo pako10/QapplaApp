@@ -1,8 +1,13 @@
 package com.example.paco.qapplaapp.Fragments.Games;
 
-import android.app.Fragment;
+
+
 import android.content.Context;
 import android.os.Bundle;
+
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,12 +54,21 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "CounterStrike");
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+                /*GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
+                gameSearchFragment2.setArguments(bundle);
+                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
+                fragmentTransaction.commit();
             }
         });
 
@@ -66,12 +80,21 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "Hearthstone");
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
+                gameSearchFragment2.setArguments(bundle);
+                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
+                fragmentTransaction.commit();
             }
         });
 
@@ -84,12 +107,12 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "Overwatch");
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
             }
         });
 
@@ -101,12 +124,21 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "Fifa");
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
+                gameSearchFragment2.setArguments(bundle);
+                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
+                fragmentTransaction.commit();
             }
         });
 
@@ -118,12 +150,21 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "LoL");
 
-                GameSearchFragment gameSearchFragment = new GameSearchFragment();
+                /*GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 gameSearchFragment.setArguments(bundle);
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();
+                        .commit();*/
+
+                FragmentManager fragmentManager;
+                FragmentTransaction fragmentTransaction;
+                fragmentManager = getFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
+                gameSearchFragment2.setArguments(bundle);
+                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
+                fragmentTransaction.commit();
             }
         });
     }

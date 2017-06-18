@@ -2,13 +2,15 @@ package com.example.paco.qapplaapp;
 
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 
+
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -27,6 +29,7 @@ import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.example.paco.qapplaapp.Fragments.GameSearchFragment;
 import com.example.paco.qapplaapp.Fragments.Games.PcFragment;
 import com.example.paco.qapplaapp.Fragments.HomeFragment;
+import com.example.paco.qapplaapp.Fragments.Matches.MatchesFragment;
 import com.example.paco.qapplaapp.Fragments.ProfileFragment;
 import com.example.paco.qapplaapp.Objects.FriendRequest;
 import com.example.paco.qapplaapp.Objects.GamerUser;
@@ -284,14 +287,14 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction;
         switch (position){
             case 0:
-                fragmentManager = getFragmentManager();
+                fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 HomeFragment homeFragment = new HomeFragment();
                 fragmentTransaction.replace(R.id.content,homeFragment);
                 fragmentTransaction.commit();
                 break;
             case 1:
-                fragmentManager = getFragmentManager();
+                fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 ProfileFragment profileFragment= new ProfileFragment();
                 fragmentTransaction.replace(R.id.content, profileFragment);
@@ -299,14 +302,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 2:
-                fragmentManager = getFragmentManager();
+                fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
-                PcFragment pcfileFragment = new PcFragment();
-                fragmentTransaction.replace(R.id.content, pcfileFragment);
+                MatchesFragment matchesFragment = new MatchesFragment();
+                fragmentTransaction.replace(R.id.content, matchesFragment);
                 fragmentTransaction.commit();
                 break;
             case 3:
-                fragmentManager = getFragmentManager();
+                fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 GameSearchFragment gameSearchFragment = new GameSearchFragment();
                 fragmentTransaction.replace(R.id.content, gameSearchFragment);
@@ -314,7 +317,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case 4:
-                fragmentManager = getFragmentManager();
+                fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 com.example.paco.qapplaapp.collapse.MainActivity collapse = new com.example.paco.qapplaapp.collapse.MainActivity();
                 fragmentTransaction.replace(R.id.content, collapse);

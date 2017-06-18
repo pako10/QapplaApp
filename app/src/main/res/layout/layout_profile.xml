@@ -201,7 +201,8 @@
                 android:text="0"
                 android:textAllCaps="true"
                 android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#20CA2A"/>
 
             <TextView
                 android:layout_marginTop="10dp"
@@ -210,7 +211,8 @@
                 android:layout_gravity="center"
                 android:text="Ganados"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#20CA2A"/>
         </LinearLayout>
 
         <LinearLayout
@@ -230,7 +232,8 @@
                 android:text="0"
                 android:textAllCaps="true"
                 android:textSize="36sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#D91E1E"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -239,7 +242,8 @@
                 android:layout_marginTop="10dp"
                 android:text="Perdidos"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="#D91E1E"/>
         </LinearLayout>
 
 

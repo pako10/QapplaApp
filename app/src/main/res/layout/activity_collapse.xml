@@ -58,10 +58,11 @@
                             android:id="@+id/imageView"
                             android:layout_width="120dp"
                             android:layout_height="120dp"
-                            android:src="@drawable/halo"
+                            android:src="@drawable/profiledefault"
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
-                            app:layout_collapseMode="parallax" />
+                            app:layout_collapseMode="parallax"
+                            app:civ_border_width="0dp"/>
 
                         <ImageView
                             android:id="@+id/imageView7"
@@ -221,7 +222,8 @@
                                 android:text="0"
                                 android:textAllCaps="true"
                                 android:textSize="36sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textColor="#20CA2A"/>
 
                             <TextView
                                 android:layout_marginTop="10dp"
@@ -230,7 +232,8 @@
                                 android:layout_gravity="center"
                                 android:text="Ganados"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textColor="#20CA2A"/>
                         </LinearLayout>
 
                         <LinearLayout
@@ -250,7 +253,8 @@
                                 android:text="0"
                                 android:textAllCaps="true"
                                 android:textSize="36sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textColor="#D91E1E"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -259,7 +263,8 @@
                                 android:layout_marginTop="10dp"
                                 android:text="Perdidos"
                                 android:textSize="18sp"
-                                android:textStyle="bold" />
+                                android:textStyle="bold"
+                                android:textColor="#D91E1E"/>
                         </LinearLayout>
 
 
@@ -312,7 +317,9 @@
         fab:menu_shadowXOffset="1dp"
         fab:menu_shadowYOffset="4dp"
         fab:menu_showShadow="true"
-        android:layout_gravity="bottom|end">
+        android:layout_gravity="center_vertical|left"
+        app:fabSize="mini"
+        app:layout_anchorGravity="top|right">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/material_design_floating_action_menu_item1"
@@ -348,11 +355,8 @@
     </com.github.clans.fab.FloatingActionMenu>
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <include layout="@layout/content_collapse" />
 
 
 

@@ -2,6 +2,8 @@ package com.example.paco.qapplaapp;
 
 import android.animation.Animator;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Patterns;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.widget.Button;
@@ -56,6 +59,8 @@ public class LoginActivity extends AppCompatActivity {
     private RelativeLayout layoutContent;
     private boolean isOpen = false;
 
+    AlertDialog alert = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +83,13 @@ public class LoginActivity extends AppCompatActivity {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loginFirebase();
+                if(!isEmailValid(etEmail.getText().toString())){
+                    String emailError = "Formato de correo inválido.";
+                    alertErrorData(emailError);
+                    return;
+                }else {
+                    loginFirebase();
+                }
             }
         });
 
@@ -171,7 +182,6 @@ public class LoginActivity extends AppCompatActivity {
                     String userName = (String) dataSnapshot.child("userName").getValue();
                     Toast.makeText(LoginActivity.this, userName, Toast.LENGTH_SHORT).show();
 
-
             }
 
             @Override
@@ -180,6 +190,26 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+    public boolean isEmailValid(CharSequence email){
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void alertErrorData(String Error){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(Error)
+                .setCancelable(false)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                    }
+                });
+
+        alert = builder.create();
+        alert.show();
+    }
+
+
 
 
 

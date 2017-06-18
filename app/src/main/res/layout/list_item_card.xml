@@ -9,14 +9,14 @@
     app:cardElevation="3dp"
     app:cardPreventCornerOverlap="false"
     app:contentPadding="0dp"
-    android:background="@color/colorWhite">
+    android:background="@color/colorPrimary">
 
     <TextView
         android:id="@+id/tvUserNameSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Halomaster"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_alignTop="@+id/imgUserSearch"
@@ -103,7 +103,8 @@
         android:layout_toEndOf="@+id/tvLose"
         android:layout_toRightOf="@+id/tvLose"
         android:text="Nivel"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/textColor"/>
 
     <TextView
         android:id="@+id/textView20"
@@ -116,7 +117,8 @@
         android:layout_toEndOf="@+id/textView19"
         android:layout_toRightOf="@+id/textView19"
         android:text="Experiencia"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/textColor"/>
 
     <TextView
         android:id="@+id/tvLvl"
@@ -129,7 +131,8 @@
         android:layout_alignBaseline="@+id/tvExperience"
         android:layout_alignBottom="@+id/tvExperience"
         android:layout_alignLeft="@+id/textView19"
-        android:layout_alignStart="@+id/textView19" />
+        android:layout_alignStart="@+id/textView19"
+        android:textColor="@color/textColor"/>
 
     <TextView
         android:id="@+id/tvExperience"
@@ -141,6 +144,7 @@
         android:layout_marginLeft="17dp"
         android:layout_marginStart="17dp"
         android:text="999"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/textColor"/>
 
 </RelativeLayout>

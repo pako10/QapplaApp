@@ -9,7 +9,7 @@
     android:layout_marginTop="@dimen/activity_horizontal_margin"
     android:fitsSystemWindows="true"
     android:id="@+id/layoutMain"
-    android:background="#c4c4c4">
+    android:background="@drawable/gradient">
 
     <RelativeLayout
         xmlns:tools="http://schemas.android.com/tools"
@@ -95,7 +95,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:background="@drawable/round_button"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/primary"
         android:text="Facebook"
         android:textColor="#ffff"
         android:textStyle="bold"
@@ -119,11 +119,12 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
+  <!--  <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="O entra "
+        android:textColor="@color/colorWhite"
         android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="25dp" />
@@ -138,7 +139,7 @@
         android:layout_marginBottom="22dp"
         android:layout_marginLeft="11dp"
         android:layout_marginStart="11dp"
-        android:text="¿Aun no tienes Cuenta?" />
+        android:text="¿Aun no tienes Cuenta?" />-->
 
 
 </RelativeLayout>
