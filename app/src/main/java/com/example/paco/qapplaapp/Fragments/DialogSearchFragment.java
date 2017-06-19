@@ -354,6 +354,7 @@ public class DialogSearchFragment extends DialogFragment {
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
+                selectedGame = "fifa";
 
                 imgGame1.setImageResource(R.drawable.fifaactivo);
                 imgGame2.setImageResource(R.drawable.overlog);
@@ -374,6 +375,7 @@ public class DialogSearchFragment extends DialogFragment {
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
+                selectedGame = "overwatch";
 
                 imgGame1.setImageResource(R.drawable.fifalog);
                 imgGame2.setImageResource(R.drawable.overactivo);
@@ -393,6 +395,7 @@ public class DialogSearchFragment extends DialogFragment {
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
+                selectedGame = "gow";
 
                 imgGame1.setImageResource(R.drawable.fifalog);
                 imgGame2.setImageResource(R.drawable.overlog);
@@ -401,7 +404,9 @@ public class DialogSearchFragment extends DialogFragment {
 
                 if (btXbox.isSelected()){
                     imgGame4.setImageResource(R.drawable.halolog);
+
                 }else{
+
                     imgGame4.setImageResource(R.drawable.lolog);
                 }
             }
@@ -420,7 +425,9 @@ public class DialogSearchFragment extends DialogFragment {
 
                 if (btXbox.isSelected()){
                     imgGame4.setImageResource(R.drawable.haloactivo);
+                    selectedGame = "halo";
                 }else{
+                    selectedGame = "lol";
                     imgGame4.setImageResource(R.drawable.lolactivo);
                 }
             }
@@ -431,6 +438,7 @@ public class DialogSearchFragment extends DialogFragment {
             public void onClick(View view) {
                 floatingSearchViewQapla.setVisibility(View.GONE);
                 btBuscar.setVisibility(View.VISIBLE);
+                selectedGame = "hearth";
                 imgGame1.setImageResource(R.drawable.fifalog);
                 imgGame2.setImageResource(R.drawable.overlog);
                 imgGame3.setImageResource(R.drawable.gowlog);

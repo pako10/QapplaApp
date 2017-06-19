@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    android:padding="@dimen/activity_horizontal_margin">
 
 
     <ScrollView
@@ -22,11 +23,11 @@
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
+                    android:layout_height="100dp"
                     app:srcCompat="@drawable/fifalog" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvFifaPs4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView3"
@@ -34,7 +35,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif"
                     android:text="Fifa"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 
@@ -54,12 +55,12 @@
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
+                    android:layout_height="100dp"
                     app:srcCompat="@drawable/overlog" />
 
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tvOverPs4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView5"
@@ -67,7 +68,7 @@
                     android:layout_marginTop="15dp"
                     android:fontFamily="sans-serif"
                     android:text="Overwatch"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 

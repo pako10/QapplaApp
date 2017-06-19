@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@drawable/gradient"
+    android:padding="@dimen/activity_horizontal_margin">
 
 
     <ScrollView
@@ -24,20 +25,19 @@
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
-                    app:srcCompat="@drawable/lolog" />
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/overlog" />
 
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvLolPc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView3"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="LOL"
-                    android:textSize="24sp"
+                    android:text="OVERWATCH"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 
@@ -55,22 +55,21 @@
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
+                    android:layout_height="100dp"
                     app:srcCompat="@drawable/hearthlog" />
 
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvHearthPc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView8"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Hearthstone"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/textColor"/>
+                    android:text="HEARTHSTONE"
+                    android:textColor="@color/textColor"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
 
@@ -87,20 +86,19 @@
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
+                    android:layout_height="100dp"
                     app:srcCompat="@drawable/gowlog" />
 
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tvGearsPc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView5"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Gears of War"
-                    android:textSize="24sp"
+                    android:text="GOW 4"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 
@@ -124,20 +122,19 @@
                 <ImageView
                     android:id="@+id/imageView10"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
-                    app:srcCompat="@drawable/fifalog" />
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/halolog" />
 
 
                 <TextView
-                    android:id="@+id/textView10"
+                    android:id="@+id/tvHaloPc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView10"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Fifa"
-                    android:textSize="24sp"
+                    android:text="HALO"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 
@@ -154,20 +151,19 @@
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="150dp"
-                    android:layout_height="125dp"
-                    app:srcCompat="@drawable/overlog" />
+                    android:layout_height="100dp"
+                    app:srcCompat="@drawable/lolog" />
 
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tvOverPc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView7"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Overwatch"
-                    android:textSize="24sp"
+                    android:text="LOL"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
 

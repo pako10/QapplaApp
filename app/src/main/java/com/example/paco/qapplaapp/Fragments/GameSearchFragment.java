@@ -29,6 +29,7 @@ import com.example.paco.qapplaapp.Objects.RecyclerAdapter;
 import com.example.paco.qapplaapp.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -58,6 +59,8 @@ public class GameSearchFragment extends Fragment {
     String[] consoles = { "xbox", "ps4", "pc" };
 
     Button btUser,btEquip;
+
+    CircularImageView imgGame;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -97,6 +100,7 @@ public class GameSearchFragment extends Fragment {
         btEquip = (Button) view.findViewById(R.id.btEquip);
         btUser = (Button) view.findViewById(R.id.btUser);
         spConsoles = (Spinner) view.findViewById(R.id.spConsole);
+        imgGame = (CircularImageView) view.findViewById(R.id.imgGame);
 
         ArrayAdapter adapter = new ArrayAdapter<String>(mContext,
                 android.R.layout.simple_spinner_dropdown_item, consoles);
@@ -107,6 +111,25 @@ public class GameSearchFragment extends Fragment {
         String platform = getArguments().getString("platform");
 
         Toast.makeText(mContext, game, Toast.LENGTH_SHORT).show();
+
+        if (game.equals("fifa")){
+            imgGame.setImageResource(R.drawable.fifalog);
+        }
+        if (game.equals("overwatch")){
+            imgGame.setImageResource(R.drawable.overlog);
+        }
+        if (game.equals("gow")){
+            imgGame.setImageResource(R.drawable.gowlog);
+        }
+        if (game.equals("halo")){
+            imgGame.setImageResource(R.drawable.halolog);
+        }
+        if (game.equals("lol")){
+            imgGame.setImageResource(R.drawable.lolog);
+        }
+        if (game.equals("hearth")){
+            imgGame.setImageResource(R.drawable.hearthlog);
+        }
 
 
 

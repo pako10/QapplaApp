@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:theme="@style/AppTheme.AppBarOverlay"
-        android:background="#141833"
+        android:background="#0E1222"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingRight="@dimen/activity_horizontal_margin"
@@ -42,7 +42,6 @@
                 android:id="@+id/imgSearch"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:tint="@color/dark_gray"
                 app:srcCompat="@drawable/buscar"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
@@ -51,7 +50,7 @@
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/qapla" />
@@ -77,7 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top"
             app:layout_anchorGravity="top"
-            android:layout_below="@id/rvBtGames" />
+            android:layout_below="@id/rvBtGames"
+            android:background="#0E1222"/>
 
         <android.support.v4.view.ViewPager
             android:id="@+id/containerF"

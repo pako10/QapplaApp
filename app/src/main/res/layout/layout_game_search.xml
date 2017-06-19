@@ -35,7 +35,7 @@
                 android:layout_margin="@dimen/activity_horizontal_margin">
 
                 <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imgGame"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:src="@drawable/halo"
@@ -46,9 +46,9 @@
                     android:id="@+id/imageView7"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:layout_alignBottom="@+id/imageView"
-                    android:layout_alignEnd="@+id/imageView"
-                    android:layout_alignRight="@+id/imageView"
+                    android:layout_alignBottom="@+id/imgGame"
+                    android:layout_alignEnd="@+id/imgGame"
+                    android:layout_alignRight="@+id/imgGame"
                     app:srcCompat="@drawable/circle_modify" />
 
                 <Button
@@ -69,8 +69,8 @@
                     android:id="@+id/btEquip"
                     android:layout_width="wrap_content"
                     android:layout_height="30dp"
-                    android:layout_alignLeft="@+id/imageView"
-                    android:layout_alignStart="@+id/imageView"
+                    android:layout_alignLeft="@+id/imgGame"
+                    android:layout_alignStart="@+id/imgGame"
                     android:layout_alignTop="@+id/btUser"
                     android:layout_marginLeft="64dp"
                     android:layout_marginStart="64dp"

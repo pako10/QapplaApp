@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.example.paco.qapplaapp.Fragments.GameSearchFragment;
 import com.example.paco.qapplaapp.R;
@@ -25,12 +26,17 @@ public class Ps4Fragment extends Fragment {
     RelativeLayout rvOverwatch;
     RelativeLayout rvFifa;
 
+    TextView tvFifa,tvOver;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.layout_ps4, container, false);
 
 
         rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvStreetPs4);
         rvFifa = (RelativeLayout) view.findViewById(R.id.rvFifaPs4);
+
+        tvFifa = (TextView) view.findViewById(R.id.tvFifaPs4);
+        tvOver = (TextView) view.findViewById(R.id.tvOverPs4);
 
         gameSearchClick();
 
