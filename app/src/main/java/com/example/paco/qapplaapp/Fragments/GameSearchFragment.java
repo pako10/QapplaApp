@@ -3,6 +3,7 @@ package com.example.paco.qapplaapp.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -11,13 +12,18 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -34,6 +40,8 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static com.google.android.gms.R.id.toolbar;
 
 
 /**
@@ -60,7 +68,10 @@ public class GameSearchFragment extends Fragment {
 
     Button btUser,btEquip;
 
-    CircularImageView imgGame;
+    ImageView imgGame;
+    ImageView imgSearch;
+    String game;
+
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -74,8 +85,6 @@ public class GameSearchFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
 
-
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -83,6 +92,10 @@ public class GameSearchFragment extends Fragment {
         adapter = new RecyclerAdapter(mContext);
         recyclerView.setAdapter(adapter);
 
+        stringArrayList.add(new QapplaUser("haloMaster"));
+        stringArrayList.add(new QapplaUser("haloMaster"));
+        stringArrayList.add(new QapplaUser("haloMaster"));
+        stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
@@ -99,36 +112,68 @@ public class GameSearchFragment extends Fragment {
         floatingActionButton3 = (FloatingActionButton) view.findViewById(R.id.material_design_floating_action_menu_item3);
         btEquip = (Button) view.findViewById(R.id.btEquip);
         btUser = (Button) view.findViewById(R.id.btUser);
-        spConsoles = (Spinner) view.findViewById(R.id.spConsole);
-        imgGame = (CircularImageView) view.findViewById(R.id.imgGame);
+        imgGame = (ImageView) view.findViewById(R.id.imgGame);
+        imgSearch = (ImageView) view.findViewById(R.id.imgGameSearch);
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(mContext,
-                android.R.layout.simple_spinner_dropdown_item, consoles);
-        spConsoles.setAdapter(adapter);
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Busqueda", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
-        String game = getArguments().getString("game");
-        String platform = getArguments().getString("platform");
 
-        Toast.makeText(mContext, game, Toast.LENGTH_SHORT).show();
 
-        if (game.equals("fifa")){
-            imgGame.setImageResource(R.drawable.fifalog);
-        }
-        if (game.equals("overwatch")){
-            imgGame.setImageResource(R.drawable.overlog);
-        }
-        if (game.equals("gow")){
-            imgGame.setImageResource(R.drawable.gowlog);
-        }
-        if (game.equals("halo")){
-            imgGame.setImageResource(R.drawable.halolog);
-        }
-        if (game.equals("lol")){
-            imgGame.setImageResource(R.drawable.lolog);
-        }
-        if (game.equals("hearth")){
-            imgGame.setImageResource(R.drawable.hearthlog);
+        Intent intent = getActivity().getIntent();
+
+
+        if (getArguments() != null) {
+            game = getArguments().getString("game");
+            String platform = getArguments().getString("platform");
+
+            Toast.makeText(mContext, game, Toast.LENGTH_SHORT).show();
+
+            if (game.equals("fifa")) {
+                imgGame.setImageResource(R.drawable.fifalog);
+            }
+            if (game.equals("overwatch")) {
+                imgGame.setImageResource(R.drawable.overlog);
+            }
+            if (game.equals("gow")) {
+                imgGame.setImageResource(R.drawable.gowlog);
+            }
+            if (game.equals("halo")) {
+                imgGame.setImageResource(R.drawable.halolog);
+            }
+
+            if (game.equals("lol")) {
+                imgGame.setImageResource(R.drawable.lolog);
+            }
+            if (game.equals("hearth")) {
+                imgGame.setImageResource(R.drawable.hearthlog);
+            }
+        }else if (intent.getStringExtra("game") != null ){
+            game = intent.getStringExtra("game");
+            if (game.equals("fifa")) {
+                imgGame.setImageResource(R.drawable.fifalog);
+            }
+            if (game.equals("overwatch")) {
+                imgGame.setImageResource(R.drawable.overlog);
+            }
+            if (game.equals("gow")) {
+                imgGame.setImageResource(R.drawable.gowlog);
+            }
+            if (game.equals("halo")) {
+                imgGame.setImageResource(R.drawable.halolog);
+            }
+
+            if (game.equals("lol")) {
+                imgGame.setImageResource(R.drawable.lolog);
+            }
+            if (game.equals("hearth")) {
+                imgGame.setImageResource(R.drawable.hearthlog);
+            }
         }
 
 
@@ -160,16 +205,16 @@ public class GameSearchFragment extends Fragment {
         if (background instanceof ShapeDrawable) {
             // cast to 'ShapeDrawable'
             ShapeDrawable shapeDrawable = (ShapeDrawable) background;
-            shapeDrawable.getPaint().setColor(Color.GREEN);
+            shapeDrawable.getPaint().setColor(getResources().getColor(R.color.colorAccent));
         } else if (background instanceof GradientDrawable) {
             // cast to 'GradientDrawable'
             GradientDrawable gradientDrawable = (GradientDrawable) background;
             //gradientDrawable.setColor(ContextCompat.getColor(mContext,R.color.colorPrimary));
-            gradientDrawable.setColor(Color.GREEN);
+            gradientDrawable.setColor(getResources().getColor(R.color.colorAccent));
         } else if (background instanceof ColorDrawable) {
             // alpha value may need to be set again after this call
             ColorDrawable colorDrawable = (ColorDrawable) background;
-            colorDrawable.setColor(Color.GREEN);
+            colorDrawable.setColor(getResources().getColor(R.color.colorAccent));
         }
 
 
@@ -194,16 +239,16 @@ public class GameSearchFragment extends Fragment {
         if (background instanceof ShapeDrawable) {
             // cast to 'ShapeDrawable'
             ShapeDrawable shapeDrawable = (ShapeDrawable) background;
-            shapeDrawable.getPaint().setColor(Color.GREEN);
+            shapeDrawable.getPaint().setColor(getResources().getColor(R.color.colorAccent));
         } else if (background instanceof GradientDrawable) {
             // cast to 'GradientDrawable'
             GradientDrawable gradientDrawable = (GradientDrawable) background;
             //gradientDrawable.setColor(ContextCompat.getColor(mContext,R.color.colorPrimary));
-            gradientDrawable.setColor(Color.GREEN);
+            gradientDrawable.setColor(getResources().getColor(R.color.colorAccent));
         } else if (background instanceof ColorDrawable) {
             // alpha value may need to be set again after this call
             ColorDrawable colorDrawable = (ColorDrawable) background;
-            colorDrawable.setColor(Color.GREEN);
+            colorDrawable.setColor(getResources().getColor(R.color.colorAccent));
         }
 
 
@@ -220,6 +265,12 @@ public class GameSearchFragment extends Fragment {
         btEquip.setSelected(true);
         btUser.setSelected(false);
 
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_game, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 

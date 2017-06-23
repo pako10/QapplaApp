@@ -51,6 +51,7 @@
             android:name=".Prueba.Aver"
             android:label="@string/title_activity_aver"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".Prueba.vea"
             android:label="@string/title_activity_vea"

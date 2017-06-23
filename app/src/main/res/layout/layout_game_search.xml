@@ -13,85 +13,6 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:fillViewport="true" />
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/app_bar"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-
-        <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/activity_horizontal_margin">
-
-                <com.mikhaellopez.circularimageview.CircularImageView
-                    android:id="@+id/imgGame"
-                    android:layout_width="120dp"
-                    android:layout_height="120dp"
-                    android:src="@drawable/halo"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_alignBottom="@+id/imgGame"
-                    android:layout_alignEnd="@+id/imgGame"
-                    android:layout_alignRight="@+id/imgGame"
-                    app:srcCompat="@drawable/circle_modify" />
-
-                <Button
-                    android:textColor="@color/black"
-                    android:id="@+id/btUser"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="18dp"
-                    android:layout_marginRight="18dp"
-                    android:text="Usuarios"
-                    android:background="@drawable/selected_incomplete_round_button"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toLeftOf="@+id/imageView7"
-                    android:layout_toStartOf="@+id/imageView7" />
-
-                <Button
-                    android:textColor="@color/black"
-                    android:id="@+id/btEquip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_alignLeft="@+id/imgGame"
-                    android:layout_alignStart="@+id/imgGame"
-                    android:layout_alignTop="@+id/btUser"
-                    android:layout_marginLeft="64dp"
-                    android:layout_marginStart="64dp"
-                    android:text="Equipos"
-                    android:background="@drawable/right_incomplete_round_button"/>
-
-                <Spinner
-                    android:id="@+id/spConsole"
-                    android:layout_width="90dp"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/imageView7"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
-
-
-            </RelativeLayout>
-
-
-        </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
 
     <com.github.clans.fab.FloatingActionMenu
         android:clickable="true"
@@ -103,8 +24,8 @@
         fab:menu_animationDelayPerItem="55"
         fab:menu_backgroundColor="@android:color/transparent"
         fab:menu_buttonSpacing="0dp"
-        fab:menu_colorNormal="#da3c2f"
-        fab:menu_colorPressed="#dc4b3f"
+        fab:menu_colorNormal="@color/accent"
+        fab:menu_colorPressed="@color/accent"
         fab:menu_colorRipple="#99d4d4d4"
         fab:menu_fab_label="Menu"
         fab:menu_fab_size="normal"
@@ -138,7 +59,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Encontrar Reta"
-            fab:fab_size="mini" />
+            fab:fab_size="mini"
+            app:fab_colorNormal="@color/accent"
+            app:fab_colorPressed="@color/accent"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/material_design_floating_action_menu_item2"
@@ -146,7 +69,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Crear Reta"
-            fab:fab_size="mini" />
+            fab:fab_size="mini"
+            app:fab_colorNormal="@color/accent"
+            app:fab_colorPressed="@color/accent"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/material_design_floating_action_menu_item3"
@@ -154,7 +79,9 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Crear Torneo"
-            fab:fab_size="mini" />
+            fab:fab_size="mini"
+            app:fab_colorNormal="@color/accent"
+            app:fab_colorPressed="@color/accent"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/material_design_floating_action_menu_item4"
@@ -162,8 +89,115 @@
             android:layout_height="wrap_content"
             android:src="@drawable/fab_add"
             fab:fab_label="Crear Equipo"
-            fab:fab_size="mini" />
+            fab:fab_size="mini"
+            app:fab_colorNormal="@color/accent"
+            app:fab_colorPressed="@color/accent"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/material_design_floating_action_menu_item5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            fab:fab_label="Encontrar Reta"
+            fab:fab_size="normal"
+            app:fab_colorNormal="@color/colorAccent"
+            app:fab_colorPressed="@color/colorAccent"/>
     </com.github.clans.fab.FloatingActionMenu>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgGame"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/halo" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignBottom="@+id/imgGame"
+                    android:layout_alignEnd="@+id/imgGame"
+                    android:layout_alignRight="@+id/imgGame"
+                    app:srcCompat="@drawable/circle_modify" />
+
+                <Button
+                    android:id="@+id/btUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_toLeftOf="@+id/imageView7"
+                    android:layout_toStartOf="@+id/imageView7"
+                    android:background="@drawable/selected_incomplete_round_button"
+                    android:text="Usuarios"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/btEquip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignLeft="@+id/imgGame"
+                    android:layout_alignStart="@+id/imgGame"
+                    android:layout_alignTop="@+id/btUser"
+                    android:layout_marginLeft="64dp"
+                    android:layout_marginStart="64dp"
+                    android:background="@drawable/right_incomplete_round_button"
+                    android:text="Equipos"
+                    android:textColor="@color/black" />
+
+                <ImageView
+                    android:id="@+id/imgGameSearch"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    fab:srcCompat="@drawable/buscar"
+                    android:layout_alignParentTop="true"
+                    android:layout_toLeftOf="@+id/imageView12"
+                    android:layout_toStartOf="@+id/imageView12"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp" />
+
+                <ImageView
+                    android:id="@+id/imageView12"
+                    android:layout_width="30dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    fab:srcCompat="@drawable/ic_tune_white_24dp" />
+
+
+            </RelativeLayout>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
 
 
 </android.support.design.widget.CoordinatorLayout>

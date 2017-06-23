@@ -3,6 +3,7 @@ package com.example.paco.qapplaapp.Fragments.Games;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 
@@ -15,7 +16,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.paco.qapplaapp.Fragments.DialogSearchFragment;
 import com.example.paco.qapplaapp.Fragments.GameSearchFragment;
+import com.example.paco.qapplaapp.MainActivity;
 import com.example.paco.qapplaapp.R;
 
 /**
@@ -43,7 +46,7 @@ public class PcFragment extends Fragment {
         Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), fontPath);
         // Applying font
 
-
+        mContext = getContext();
 
         tvGears = (TextView) view.findViewById(R.id.tvGearsPc);
         tvHalo = (TextView) view.findViewById(R.id.tvHaloPc);
@@ -52,9 +55,9 @@ public class PcFragment extends Fragment {
         tvOver = (TextView) view.findViewById(R.id.tvOverPc);
         rvGears = (RelativeLayout) view.findViewById(R.id.rvCsPc);
         rvHearthstone = (RelativeLayout) view.findViewById(R.id.rvHearthStonePc);
-        rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvOwerwatchPc);
+        rvLol = (RelativeLayout) view.findViewById(R.id.rvOwerwatchPc);
         rvHalo = (RelativeLayout) view.findViewById(R.id.rvFifaPc);
-        rvLol = (RelativeLayout) view.findViewById(R.id.rvLolPc);
+        rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvLolPc);
 
         tvGears.setTypeface(tf);
         tvHalo.setTypeface(tf);
@@ -83,14 +86,20 @@ public class PcFragment extends Fragment {
                         .addToBackStack(null)
                         .commit();*/
 
-                FragmentManager fragmentManager;
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game","gow");
+                startActivity(i);
+                getActivity().finish();
+
+                /*FragmentManager fragmentManager;
                 FragmentTransaction fragmentTransaction;
                 fragmentManager = getFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
                 gameSearchFragment2.setArguments(bundle);
                 fragmentTransaction.replace(R.id.content, gameSearchFragment2);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
             }
         });
 
@@ -98,25 +107,13 @@ public class PcFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
-                bundle.putString("game", "hearth");
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "hearth");
+                startActivity(i);
+                getActivity().finish();
 
-               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();*/
 
-                FragmentManager fragmentManager;
-                FragmentTransaction fragmentTransaction;
-                fragmentManager = getFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
-                gameSearchFragment2.setArguments(bundle);
-                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
-                fragmentTransaction.commit();
             }
         });
 
@@ -129,12 +126,11 @@ public class PcFragment extends Fragment {
                 bundle.putString("platform", "pc");
                 bundle.putString("game", "overwatch");
 
-               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();*/
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "overwatch");
+                startActivity(i);
+                getActivity().finish();
             }
         });
 
@@ -142,25 +138,12 @@ public class PcFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
-                bundle.putString("game", "halo");
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "halo");
+                startActivity(i);
+                getActivity().finish();
 
-               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();*/
-
-                FragmentManager fragmentManager;
-                FragmentTransaction fragmentTransaction;
-                fragmentManager = getFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
-                gameSearchFragment2.setArguments(bundle);
-                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
-                fragmentTransaction.commit();
             }
         });
 
@@ -168,25 +151,12 @@ public class PcFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
-                bundle.putString("game", "lol");
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "lol");
+                startActivity(i);
+                getActivity().finish();
 
-                /*GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();*/
-
-                FragmentManager fragmentManager;
-                FragmentTransaction fragmentTransaction;
-                fragmentManager = getFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
-                gameSearchFragment2.setArguments(bundle);
-                fragmentTransaction.replace(R.id.content, gameSearchFragment2);
-                fragmentTransaction.commit();
             }
         });
     }

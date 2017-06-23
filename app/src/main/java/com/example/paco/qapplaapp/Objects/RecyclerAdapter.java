@@ -49,7 +49,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(RecyclerAdapter.ViewHolder viewHolder, int position) {
 
-        viewHolder.tvUserName.setText(friends.get(position).getNombre());
+//        viewHolder.tvUserName.setText(friends.get(position).getNombre());
       //  viewHolder.item.setText(friends.get(position));
     }
 
@@ -71,12 +71,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         public ViewHolder(View view) {
             super(view);
-            tvUserName = (TextView) view.findViewById(R.id.tvUserNameSearch);
+           /* tvUserName = (TextView) view.findViewById(R.id.tvUserNameSearch);
             imgUserSearch = (ImageView) view.findViewById(R.id.imgUserSearch);
             tvUserWins = (TextView) view.findViewById(R.id.tvWins);
             tvUserLoses = (TextView) view.findViewById(R.id.tvLose);
             tvUserLvl = (TextView) view.findViewById(R.id.tvLvl);
-            tvUserExp = (TextView) view.findViewById(R.id.tvExperience);
+            tvUserExp = (TextView) view.findViewById(R.id.tvExperience);*/
 
 
         }

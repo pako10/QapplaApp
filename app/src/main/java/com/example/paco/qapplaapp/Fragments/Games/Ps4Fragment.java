@@ -3,6 +3,9 @@ package com.example.paco.qapplaapp.Fragments.Games;
 
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
@@ -15,6 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.paco.qapplaapp.Fragments.GameSearchFragment;
+import com.example.paco.qapplaapp.MainActivity;
 import com.example.paco.qapplaapp.R;
 
 /**
@@ -28,15 +32,28 @@ public class Ps4Fragment extends Fragment {
 
     TextView tvFifa,tvOver;
 
+    Context mContext;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.layout_ps4, container, false);
 
+        mContext = getActivity();
+
+        // Font path
+        String fontPath = "fonts/Lato-Bold.ttf";
+
+        // Loading Font Face
+        Typeface tf = Typeface.createFromAsset(getActivity().getAssets(), fontPath);
 
         rvOverwatch = (RelativeLayout) view.findViewById(R.id.rvStreetPs4);
         rvFifa = (RelativeLayout) view.findViewById(R.id.rvFifaPs4);
 
         tvFifa = (TextView) view.findViewById(R.id.tvFifaPs4);
         tvOver = (TextView) view.findViewById(R.id.tvOverPs4);
+
+        // Applying font
+        tvFifa.setTypeface(tf);
+        tvOver.setTypeface(tf);
 
         gameSearchClick();
 
@@ -59,7 +76,7 @@ public class Ps4Fragment extends Fragment {
                 getActivity().getFragmentManager().beginTransaction()
                         .replace(R.id.content, gameSearchFragment,null)
                         .addToBackStack(null)
-                        .commit();*/
+                        .commit();
 
                 FragmentManager fragmentManager;
                 FragmentTransaction fragmentTransaction;
@@ -68,7 +85,13 @@ public class Ps4Fragment extends Fragment {
                 GameSearchFragment gameSearchFragment2 = new GameSearchFragment();
                 gameSearchFragment2.setArguments(bundle);
                 fragmentTransaction.replace(R.id.content, gameSearchFragment2);
-                fragmentTransaction.commit();
+                fragmentTransaction.commit();*/
+
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "overwatch");
+                startActivity(i);
+                getActivity().finish();
             }
         });
 
@@ -76,16 +99,11 @@ public class Ps4Fragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Bundle bundle = new Bundle();
-                bundle.putString("platform", "ps4");
-                bundle.putString("game", "Fifa");
-
-               /* GameSearchFragment gameSearchFragment = new GameSearchFragment();
-                gameSearchFragment.setArguments(bundle);
-                getActivity().getFragmentManager().beginTransaction()
-                        .replace(R.id.content, gameSearchFragment,null)
-                        .addToBackStack(null)
-                        .commit();*/
+                Intent i = new Intent(mContext, MainActivity.class);
+                i.putExtra("platform","pc");
+                i.putExtra("game", "fifa");
+                startActivity(i);
+                getActivity().finish();
             }
         });
     }

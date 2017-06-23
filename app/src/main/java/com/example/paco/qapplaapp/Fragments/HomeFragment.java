@@ -19,6 +19,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -86,11 +87,11 @@ public class HomeFragment extends Fragment {
         tabs.addTab(tabs.newTab().setIcon(R.drawable.ps4));
         tabs.addTab(tabs.newTab().setIcon(R.drawable.pc));
 
-        viewPager = (ViewPager) view.findViewById(R.id.containerF);
+        viewPager = (ViewPager) view.findViewById(R.id.frGames);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
 
 
-        PagerPeda adapter = new PagerPeda(getFragmentManager(),tabs.getTabCount());
+        PagerPeda adapter = new PagerPeda(getChildFragmentManager(),tabs.getTabCount());
 
         viewPager.setAdapter(adapter);
 
@@ -207,7 +208,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
-    public static class PagerPeda extends FragmentPagerAdapter {
+    public static class PagerPeda extends FragmentStatePagerAdapter {
 
         //integer to count number of tabs
         int tabCount;

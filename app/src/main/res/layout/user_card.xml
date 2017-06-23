@@ -1,147 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="5dp">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/activity_horizontal_margin"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
-    android:background="@color/colorPrimary">
-
-    <TextView
-        android:id="@+id/tvUserNameSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="7dp"
-        android:layout_toEndOf="@+id/imgUserSearch"
-        android:layout_toRightOf="@+id/imgUserSearch"
-        android:text="Halomaster"
-        android:textColor="@color/textColor"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+    android:background="@color/colorPrimary"
+    android:layout_marginBottom="4dp">
 
     <ImageView
         android:id="@+id/imgUserSearch"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/halolog"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:layout_alignParentTop="true"
-        android:background="@drawable/qapplalog" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imgUserSearch"
-        android:layout_alignLeft="@+id/tvUserNameSearch"
-        android:layout_alignStart="@+id/tvUserNameSearch"
-        android:text="G"
-        android:textColor="#20CA2A"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Fifa 17"
+        android:textColor="@color/textColor"
+        android:layout_alignTop="@+id/imgUserSearch"
+        android:layout_toRightOf="@+id/imgUserSearch"
+        android:layout_toEndOf="@+id/imgUserSearch"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"/>
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/credits"
+
+        android:layout_alignTop="@+id/textView4"
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/tvWins"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView15"
-        android:layout_alignBottom="@+id/textView15"
-        android:layout_marginLeft="7dp"
-        android:layout_marginStart="7dp"
-        android:layout_toEndOf="@+id/textView15"
-        android:layout_toRightOf="@+id/textView15"
-        android:text="222"
-        android:textColor="#20CA2A"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:text="5v5"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvWins"
-        android:layout_alignBottom="@+id/tvWins"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
+        android:text="2v3"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView13"
         android:layout_marginLeft="9dp"
         android:layout_marginStart="9dp"
-        android:layout_toEndOf="@+id/tvWins"
-        android:layout_toRightOf="@+id/tvWins"
-        android:text="P"
-        android:textColor="#D91E1E"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_toEndOf="@+id/imageView13"
+        android:layout_toRightOf="@+id/imageView13"
+        android:text="10"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/tvLose"
+    <ImageView
+        android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView17"
-        android:layout_alignBottom="@+id/textView17"
-        android:layout_marginLeft="7dp"
-        android:layout_marginStart="7dp"
-        android:layout_toEndOf="@+id/textView17"
-        android:layout_toRightOf="@+id/textView17"
-        android:text="222"
-        android:textColor="#D91E1E"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        app:srcCompat="@drawable/time"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvLose"
-        android:layout_alignBottom="@+id/tvLose"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:layout_toEndOf="@+id/tvLose"
-        android:layout_toRightOf="@+id/tvLose"
-        android:text="Nivel"
+        android:layout_alignBottom="@+id/imageView14"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/imageView14"
+        android:layout_toRightOf="@+id/imageView14"
+        android:text="9:00"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hrs"
+        android:textColor="@color/colorWhite"
         android:textStyle="bold"
-        android:textColor="@color/textColor"/>
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toRightOf="@+id/textView9"
+        android:layout_toEndOf="@+id/textView9" />
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView19"
-        android:layout_alignBottom="@+id/textView19"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/textView19"
-        android:layout_toRightOf="@+id/textView19"
-        android:text="Experiencia"
-        android:textStyle="bold"
-        android:textColor="@color/textColor"/>
+    <RelativeLayout
+        android:layout_marginTop="17dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imgUserSearch"
+        android:background="#543299"
+        android:id="@+id/relativeLayout">
 
-    <TextView
-        android:id="@+id/tvLvl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textStyle="bold"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_alignBaseline="@+id/tvExperience"
-        android:layout_alignBottom="@+id/tvExperience"
-        android:layout_alignLeft="@+id/textView19"
-        android:layout_alignStart="@+id/textView19"
-        android:textColor="@color/textColor"/>
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            app:srcCompat="@drawable/profiledefault"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp" />
 
-    <TextView
-        android:id="@+id/tvExperience"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView20"
-        android:layout_alignStart="@+id/textView20"
-        android:layout_below="@+id/tvUserNameSearch"
-        android:layout_marginLeft="17dp"
-        android:layout_marginStart="17dp"
-        android:text="999"
-        android:textStyle="bold"
-        android:textColor="@color/textColor"/>
+
+        <TextView
+            android:id="@+id/tvEquipMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Equipo"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView11"
+            android:layout_toEndOf="@+id/imageView11"
+            android:layout_marginLeft="9dp"
+            android:layout_marginStart="9dp" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nivel"
+            android:textColor="@color/colorWhite"
+
+            android:layout_alignBaseline="@+id/tvEquipMatch"
+            android:layout_alignBottom="@+id/tvEquipMatch"
+            android:layout_toRightOf="@+id/tvEquipMatch"
+            android:layout_toEndOf="@+id/tvEquipMatch"
+            android:layout_marginLeft="33dp"
+            android:layout_marginStart="33dp" />
+
+        <TextView
+            android:id="@+id/tvLvlMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            android:textColor="@color/colorWhite"
+
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/textView18"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exp"
+            android:textColor="@color/colorWhite"
+
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/tvLvlMatch"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/tvExpMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999"
+            android:textColor="@color/colorWhite"
+
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/textView19"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textColor="@color/colorWhite"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/tvExpMatch"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/tvWinMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999"
+            android:textColor="@color/colorWhite"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/textView20"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="G"
+            android:textColor="@color/colorWhite"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/tvWinMatch"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+        <TextView
+            android:id="@+id/tvLoseMatch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="999"
+            android:textColor="@color/colorWhite"
+            android:layout_alignBaseline="@+id/textView18"
+            android:layout_alignBottom="@+id/textView18"
+            android:layout_toRightOf="@+id/textView18"
+            android:layout_toEndOf="@+id/textView21"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp" />
+
+    </RelativeLayout>
+
+
+
+
 </RelativeLayout>
+    </RelativeLayout>

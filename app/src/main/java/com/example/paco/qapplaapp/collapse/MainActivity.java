@@ -46,7 +46,7 @@ public class MainActivity extends Fragment {
 
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        collapsingToolbarLayout = (CollapsingToolbarLayout) view.findViewById(R.id.collapsingToolbarLayout);
+
         toolbar = (Toolbar) view.findViewById(R.id.toolbarProfile);
 
 

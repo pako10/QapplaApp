@@ -323,6 +323,8 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction.replace(R.id.content, collapse);
                 fragmentTransaction.commit();
                 break;
+
+
         }
     }
 

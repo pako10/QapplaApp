@@ -28,14 +28,13 @@
                     app:srcCompat="@drawable/gowlog" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvGearsxbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView3"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Gears of War"
+                    android:text="GOW 4"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
@@ -59,14 +58,13 @@
 
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/tvFifaXbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView8"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Fifa 17"
+                    android:text="FIFA 17"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>
@@ -91,7 +89,7 @@
 
 
                 <TextView
-                    android:id="@+id/textView7"
+                    android:id="@+id/tvHaloXbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView5"
@@ -121,14 +119,13 @@
 
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tvOverXbox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/imageView7"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="15dp"
-                    android:fontFamily="sans-serif"
-                    android:text="Overwatch"
+                    android:text="OVERWATCH"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/textColor"/>

@@ -23,10 +23,11 @@ import com.example.paco.qapplaapp.R;
 public class MatchesFragment extends Fragment {
 
     TabLayout tabs;
+    
     ViewPager viewPager;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        final View view = inflater.inflate(R.layout.layout_home,container,false);
+        final View view = inflater.inflate(R.layout.layout_matches,container,false);
 
 
         tabs = (TabLayout) view.findViewById(R.id.tabs);
