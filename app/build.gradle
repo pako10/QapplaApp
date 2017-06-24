@@ -31,7 +31,7 @@ dependencies {
     //libreria para floating search view
 
 
-    
+
 
 
     compile 'com.android.support:appcompat-v7:25.3.1'

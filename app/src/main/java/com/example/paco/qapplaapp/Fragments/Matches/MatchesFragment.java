@@ -40,7 +40,7 @@ public class MatchesFragment extends Fragment {
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabs));
 
 
-        PagerMatches adapter = new PagerMatches(getFragmentManager(),tabs.getTabCount());
+        PagerMatches adapter = new PagerMatches(getChildFragmentManager(),tabs.getTabCount());
 
         viewPager.setAdapter(adapter);
 
@@ -50,7 +50,6 @@ public class MatchesFragment extends Fragment {
                     public void onTabSelected(TabLayout.Tab tab) {
                         // ...
                         viewPager.setCurrentItem(tab.getPosition());
-
                     }
 
                     @Override
@@ -87,8 +86,8 @@ public class MatchesFragment extends Fragment {
             //Returning the current tabs
             switch (position) {
                 case 0:
-                    XboxFragment xbox = new XboxFragment();
-                    return xbox;
+                    SearchMatchesFragment searchMatchesFragment = new SearchMatchesFragment();
+                    return searchMatchesFragment;
 
                 case 1:
                     Ps4Fragment ps4 = new Ps4Fragment();

@@ -33,6 +33,8 @@ import android.widget.Toast;
 import com.example.paco.qapplaapp.Objects.QapplaUser;
 import com.example.paco.qapplaapp.Objects.RecyclerAdapter;
 import com.example.paco.qapplaapp.R;
+import com.example.paco.qapplaapp.collapse.Radio;
+import com.example.paco.qapplaapp.collapse.RecyclerViewAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 import com.mikhaellopez.circularimageview.CircularImageView;
@@ -55,8 +57,8 @@ public class GameSearchFragment extends Fragment {
 
 
     private List<QapplaUser> stringArrayList;
-    private RecyclerView recyclerView;
-    private RecyclerAdapter adapter;
+    //private RecyclerView recyclerView;
+    //private RecyclerAdapter adapter;
 
     FloatingActionMenu materialDesignFAM;
     FloatingActionButton floatingActionButton1, floatingActionButton2, floatingActionButton3;
@@ -73,6 +75,10 @@ public class GameSearchFragment extends Fragment {
     String game;
 
 
+    RecyclerView recyclerView;
+    private RecyclerViewAdapter adapter;
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.layout_game_search, container, false);
@@ -80,7 +86,7 @@ public class GameSearchFragment extends Fragment {
         mContext = getActivity();
 
 
-        stringArrayList = new ArrayList<>();
+       /* stringArrayList = new ArrayList<>();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         recyclerView.setHasFixedSize(true);
@@ -101,7 +107,30 @@ public class GameSearchFragment extends Fragment {
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
-        adapter.setFriendsList(stringArrayList);
+        adapter.setFriendsList(stringArrayList);*/
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+
+        adapter = new RecyclerViewAdapter(mContext);
+        recyclerView.setAdapter(adapter);
+        List<Radio> radioList = new ArrayList<>();
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+
+        adapter.setRadioList(radioList);
 
 
 

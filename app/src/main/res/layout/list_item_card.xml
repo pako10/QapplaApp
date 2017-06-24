@@ -4,8 +4,13 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:layout_marginBottom="4dp"
-    android:background="@color/colorPrimary">
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_marginBottom="4dp">
 
     <TextView
         android:id="@+id/tvUserNameSearch"
@@ -17,19 +22,20 @@
         android:textStyle="bold"
         android:layout_alignTop="@+id/imgUserSearch"
         android:layout_toRightOf="@+id/imgUserSearch"
-        android:layout_toEndOf="@+id/imgUserSearch" />
+        android:layout_toEndOf="@+id/imgUserSearch"
+        android:layout_marginStart="@dimen/padding_10"
+        android:layout_marginLeft="@dimen/padding_10" />
 
     <ImageView
         android:id="@+id/imgUserSearch"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/overlog"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/qapplalog"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginRight="@dimen/activity_horizontal_margin"/>
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:id="@+id/textView15"
@@ -53,7 +59,7 @@
         android:layout_marginStart="7dp"
         android:layout_toEndOf="@+id/textView15"
         android:layout_toRightOf="@+id/textView15"
-        android:text="222"
+        android:text="2"
         android:textColor="#20CA2A"
         android:textSize="14sp"
         android:textStyle="bold" />
@@ -142,5 +148,7 @@
         android:text="999"
         android:textStyle="bold"
         android:textColor="@color/textColor"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
