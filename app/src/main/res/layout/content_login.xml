@@ -7,74 +7,75 @@
     tools:context="com.example.paco.qapplaapp.LoginActivity"
     tools:showIn="@layout/activity_login"
     android:layout_marginTop="@dimen/activity_horizontal_margin"
+    android:padding="@dimen/activity_horizontal_margin"
     android:fitsSystemWindows="true"
     android:id="@+id/layoutMain"
     android:background="@drawable/gradient">
 
-    <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="320dp"
-        android:layout_height="290dp"
-        android:background="@drawable/round_login"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp"
-        android:id="@+id/layoutContent">
+
 
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textColorHint="@color/colorWhite"
+            android:id="@+id/textInputLayout7"
             android:layout_above="@+id/textInputLayout"
-            android:layout_marginBottom="9dp">
+            android:layout_centerHorizontal="true">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo Electronico"
                 android:id="@+id/etLogEmail"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress"
+                android:textColor="@color/colorAccent"
+                android:ellipsize="start"
+                android:gravity="center_horizontal"/>
         </android.support.design.widget.TextInputLayout>
 
 
         <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
+            android:id="@+id/textInputLayout"
+            android:textColorHint="@color/colorWhite"
             android:layout_centerVertical="true"
-            android:id="@+id/textInputLayout">
+            android:layout_alignLeft="@+id/textInputLayout7"
+            android:layout_alignStart="@+id/textInputLayout7">
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:inputType="textPassword"
-                android:id="@+id/etLogPass"/>
+                android:id="@+id/etLogPass"
+                android:textColorHint="@color/colorAccent"
+                android:ellipsize="start"
+                android:gravity="center_horizontal"/>
 
         </android.support.design.widget.TextInputLayout>
 
         <TextView
             android:id="@+id/textView"
-            android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/textInputLayout"
-            android:layout_marginTop="18dp"
-            android:text="¿Olvidaste tu contraseña?" />
+            android:text="¿Olvidaste tu contraseña?"
+            android:textColor="@color/colorAccentSad"
+            android:layout_below="@+id/btLoguear"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
 
 
 
 
-    </RelativeLayout>
 
     <Button
         android:id="@+id/btLoguear"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Acceder"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:text="Iniciar Sesión"
         android:textStyle="bold"
         android:textColor="#ffff"
         tools:layout_constraintTop_creator="1"
@@ -85,61 +86,69 @@
         tools:layout_constraintLeft_creator="1"
         app:layout_constraintLeft_toLeftOf="parent"
         android:background="@drawable/round_button"
-        android:layout_marginBottom="64dp"
-        android:layout_above="@+id/button2"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignStart="@+id/imageView" />
+        android:layout_marginTop="17dp"
+        android:layout_below="@+id/textInputLayout"
+        android:layout_alignLeft="@+id/button2"
+        android:layout_alignStart="@+id/button2" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round_button"
-        android:backgroundTint="@color/primary"
-        android:text="Facebook"
-        android:textColor="#ffff"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginBottom="27dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/btLoguear"
-        android:layout_alignStart="@+id/btLoguear" />
+
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/qappla2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/ojosbrillo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-  <!--  <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="O entra "
-        android:textColor="@color/colorWhite"
-        android:layout_above="@+id/button2"
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp" />
+        app:srcCompat="@drawable/qapla" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/primary"
+        android:text="Ingresa con Facebook"
+        android:textColor="#ffff"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/btLoguear"
-        android:layout_alignLeft="@+id/layoutContent"
-        android:layout_alignStart="@+id/layoutContent"
-        android:layout_marginBottom="22dp"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:text="¿Aun no tienes Cuenta?" />-->
+        android:text="¿No tienes cuenta? "
+        android:textColor="@color/colorAccentSad"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView21"
+        android:layout_alignEnd="@+id/imageView21" />
+
+    <TextView
+        android:id="@+id/tvRegistrate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView27"
+        android:layout_toEndOf="@+id/textView27"
+        android:layout_toRightOf="@+id/textView27"
+        android:text="Registrate"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"/>
 
 
 </RelativeLayout>

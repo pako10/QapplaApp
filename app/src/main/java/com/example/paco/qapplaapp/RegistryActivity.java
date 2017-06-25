@@ -115,18 +115,7 @@ public class RegistryActivity extends AppCompatActivity {
             }
         });
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(RegistryActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
 
-             //  showCreateHeaderDialog();
-              // iterateSearch();
-            }
-        });
     }
 
     public void verifyData(){

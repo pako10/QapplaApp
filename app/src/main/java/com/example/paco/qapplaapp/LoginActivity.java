@@ -20,6 +20,7 @@ import android.view.ViewAnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.paco.qapplaapp.Objects.GamerUser;
@@ -60,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
     private boolean isOpen = false;
 
     AlertDialog alert = null;
+    TextView tvRegistrate;
+    Button btFacebook;
 
 
     @Override
@@ -74,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         btLogin = (Button) findViewById(R.id.btLoguear);
         etEmail = (EditText) findViewById(R.id.etLogEmail);
         etPass = (EditText) findViewById(R.id.etLogPass);
+        tvRegistrate = (TextView) findViewById(R.id.tvRegistrate);
 
         connectivity = new Connectivity();
         if (!connectivity.isConnected(this)){
@@ -90,6 +94,23 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                     loginFirebase();
                 }
+            }
+        });
+
+        tvRegistrate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this,RegistryActivity.class);
+                startActivity(i);
+            }
+        });
+
+        btFacebook = (Button) findViewById(R.id.button2);
+        btFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(LoginActivity.this,MainActivity.class);
+                startActivity(i);
             }
         });
 

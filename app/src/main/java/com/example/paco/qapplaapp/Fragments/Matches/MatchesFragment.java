@@ -5,11 +5,15 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
+import com.example.paco.qapplaapp.Fragments.DialogSearchFragment;
 import com.example.paco.qapplaapp.Fragments.Games.PcFragment;
 import com.example.paco.qapplaapp.Fragments.Games.Ps4Fragment;
 import com.example.paco.qapplaapp.Fragments.Games.XboxFragment;
@@ -26,11 +30,35 @@ public class MatchesFragment extends Fragment {
     
     ViewPager viewPager;
 
+    ImageView imgFiltrar;
+    Button btCrearreta;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         final View view = inflater.inflate(R.layout.layout_matches,container,false);
 
 
         tabs = (TabLayout) view.findViewById(R.id.tabs);
+
+        imgFiltrar = (ImageView) view.findViewById(R.id.imgFiltrar);
+        imgFiltrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                DialogFilterMatches frag = new DialogFilterMatches();
+                frag.show(ft,"txn_tag");
+            }
+        });
+
+        btCrearreta = (Button) view.findViewById(R.id.btCrearReta);
+        btCrearreta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                DialogCreateMatches frag = new DialogCreateMatches();
+                frag.show(ft,"txn_tag");
+            }
+        });
+
 
         tabs.addTab(tabs.newTab().setText("Buscar"));
         tabs.addTab(tabs.newTab().setText("Programadas"));

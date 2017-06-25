@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/create_matches_dialog"
+    android:background="@drawable/gradient">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/images"
+        android:padding="@dimen/activity_horizontal_margin">
+
+    <ImageView
+        android:id="@+id/imgGearsFilter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/fifalog"
+        android:layout_below="@+id/imgCallofDutyFilter"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+
+    <ImageView
+        android:id="@+id/imgOverwatchFilter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/overlog" />
+
+    <ImageView
+        android:id="@+id/imgCallofDutyFilter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/gowlog"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imgFifaFilter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/lolog"
+        android:layout_alignLeft="@+id/imgCallofDutyFilter"
+        android:layout_alignStart="@+id/imgCallofDutyFilter" />
+
+    <ImageView
+        android:id="@+id/imgStreetFilter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/hearthlog"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/images"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/relativeLayout8"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/btXboxSearch"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:text="Xbox"
+            android:background="@drawable/selected_incomplete_round_button"
+
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:id="@+id/btPs4Search"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btXboxSearch"
+            android:layout_toEndOf="@+id/btXboxSearch"
+            android:layout_toRightOf="@+id/btXboxSearch"
+            android:text="Ps4"
+            android:background="#fff"/>
+
+        <Button
+            android:id="@+id/btPcSearch"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/btPs4Search"
+            android:layout_toEndOf="@+id/btPs4Search"
+            android:layout_toRightOf="@+id/btPs4Search"
+            android:text="Pc"
+            android:background="@drawable/right_incomplete_round_button"/>
+
+    </RelativeLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/btFilter"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Filtrar"
+        android:visibility="gone"
+        android:background="@drawable/round_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/relativeLayout8"
+    android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp"
+        android:id="@+id/relativeLayout3"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:id="@+id/relativeLayout2"
+            android:padding="@dimen/padding_10"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jugadores"
+                android:textColor="@color/colorWhite"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageView9"
+                android:layout_toEndOf="@+id/imageView9" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/numintegra"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout5"
+        android:padding="@dimen/padding_10"
+        android:layout_below="@+id/relativeLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/time" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Fecha y Hora"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageView15"
+            android:layout_toEndOf="@+id/imageView15" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout5"
+        android:background="@color/colorAccent"
+        android:id="@+id/relativeLayout6"
+        android:paddingTop="1dp"
+        android:paddingBottom="1dp">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/padding_10">
+
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/numretas" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/imageView16"
+                android:layout_toRightOf="@+id/imageView16"
+                android:text="No. de Retas"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout6"
+        android:background="@color/colorAccent"
+        android:paddingBottom="1dp"
+        android:id="@+id/rvCreditos">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/padding_10">
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/credits" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/imageView17"
+                android:layout_toRightOf="@+id/imageView17"
+                android:text="Creditos"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/padding_10"
+            android:layout_below="@+id/rvCreditos">
+
+            <ImageView
+                android:id="@+id/imageView18"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:srcCompat="@drawable/detalles" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_toEndOf="@+id/imageView18"
+                android:layout_toRightOf="@+id/imageView18"
+                android:textColorHint="@color/colorWhite">
+
+                <EditText
+                    android:id="@+id/textView31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:hint="Detalles de la reta"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
+            </android.support.design.widget.TextInputLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:id="@+id/button6"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:text="Listo"
+            android:layout_below="@+id/relativeLayout9"
+            android:background="@drawable/round_button"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+
+
+
+</RelativeLayout>
