@@ -1,37 +1,32 @@
-package com.example.paco.qapplaapp;
+package com.example.paco.qapplaapp.Registro;
 
-import android.animation.Animator;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.util.Patterns;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.ViewAnimationUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.example.paco.qapplaapp.MainActivity;
 import com.example.paco.qapplaapp.Objects.FriendRequest;
 import com.example.paco.qapplaapp.Objects.GamerUser;
 import com.example.paco.qapplaapp.Objects.Match;
+import com.example.paco.qapplaapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -40,12 +35,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-
-import static com.example.paco.qapplaapp.R.id.fab;
 
 public class RegistryActivity extends AppCompatActivity {
     private FirebaseAuth mFirebaseAuth;
@@ -54,12 +45,13 @@ public class RegistryActivity extends AppCompatActivity {
     EditText etCity;
     EditText etUserName;
     EditText etConfirmPass;
-    Button btLog;
     private FirebaseDatabase mFirebaseDatabase;
     AlertDialog alert = null;
 
     FloatingActionButton fab;
     boolean exist = false;
+
+    TextView tvIngresar;
 
 
     private DatabaseReference mUsersDatabaseReference;
@@ -81,16 +73,18 @@ public class RegistryActivity extends AppCompatActivity {
         etCity = (EditText) findViewById(R.id.etCity);
         etUserName = (EditText) findViewById(R.id.etUserName);
         etConfirmPass = (EditText) findViewById(R.id.etConfirmPass);
+        tvIngresar = (TextView) findViewById(R.id.tvIngresar);
         Button btregistrar = (Button) findViewById(R.id.button);
-        btLog = (Button) findViewById(R.id.btLog);
 
-        btLog.setOnClickListener(new View.OnClickListener() {
+        tvIngresar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(RegistryActivity.this, LoginActivity.class);
+                Intent i = new Intent(RegistryActivity.this,LoginActivity.class);
                 startActivity(i);
+                finish();
             }
         });
+
 
         btregistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,11 +179,15 @@ public class RegistryActivity extends AppCompatActivity {
 
                                      mFirebaseAuth.getCurrentUser().sendEmailVerification();
                                      createUser(userUid);
+                                     String userId = mFirebaseAuth.getCurrentUser().getUid();
                                      mFirebaseAuth.signOut();
-                                     break;
+                                     Intent i = new Intent(RegistryActivity.this,WhatUPlay.class);
+                                     i.putExtra("userId",userId);
+                                     startActivity(i);
+                                     finish();
+
                                  }
 
-                                 break;
                              }
                          }
 
@@ -222,14 +220,18 @@ public class RegistryActivity extends AppCompatActivity {
         FriendRequest friendRequest = new FriendRequest();
         int wins = 0;
         int losses = 0;
-        String bio = "";
+        String biography = null;
+        String penalty = "";
+        List<String> gamerTags = Arrays.asList(); /** CREAMOS LISTA VACIA PARA LOS GAMERTAG**/
+        String searching = "";
+        String photoUrl = null;
 
-        
+
 
         Toast.makeText(this, "Se creo un usuario", Toast.LENGTH_SHORT).show();
         //String userUid = "examples";
 
-        GamerUser gamerUser = new GamerUser(userUid,user,email,credits,city,country,equip,rank,experience,games,tournaments,friends,match,status,friendRequest,wins,losses,bio);
+        GamerUser gamerUser = new GamerUser(userUid,user,email,credits,city,country,equip,rank,experience,games,tournaments,friends,match,status,friendRequest,wins,losses,biography,penalty,gamerTags,searching,photoUrl);
 
        /* DatabaseReference mnuevo = FirebaseDatabase.getInstance().getReference().child("Mensaje");
         mnuevo.push().setValue("SI mete este");*/
@@ -495,7 +497,11 @@ public class RegistryActivity extends AppCompatActivity {
                 mFirebaseAuth.getCurrentUser().sendEmailVerification();
                 createUser(userUid);
                 mFirebaseAuth.signOut();
-                alertSucessful();
+                Intent i = new Intent(RegistryActivity.this,WhatUPlay.class);
+                i.putExtra("userUid",userUid);
+                startActivity(i);
+                finish();
+                //alertSucessful();
 
 
             }
@@ -625,8 +631,12 @@ public class RegistryActivity extends AppCompatActivity {
      *
      */
 
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(RegistryActivity.this,LoginActivity.class);
+        startActivity(i);
+        finish();
+        super.onBackPressed();
 
-
-
-
+    }
 }

@@ -7,19 +7,26 @@ package com.example.paco.qapplaapp.Objects;
 public class Match {
     String date;
     String hour;
-    String adversary;
+    String adversary1;
+    String adversary2;
     Integer bet;
     String game;
+    String numMatches;
+    String observations;
+    String privado; /** SE PONE EN LA BASE DE DATOS SI ES PRIVADO O NO **/
 
     public Match() {
     }
 
-    public Match(String date, String hour, String adversary, Integer bet, String game) {
+    public Match(String date, String hour, String adversary1, String adversary2, Integer bet, String game, String numMatches, String observations) {
         this.date = date;
         this.hour = hour;
-        this.adversary = adversary;
+        this.adversary1 = adversary1;
+        this.adversary2 = adversary2;
         this.bet = bet;
         this.game = game;
+        this.numMatches = numMatches;
+        this.observations = observations;
     }
 
     public String getDate() {
@@ -38,12 +45,20 @@ public class Match {
         this.hour = hour;
     }
 
-    public String getAdversary() {
-        return adversary;
+    public String getAdversary1() {
+        return adversary1;
     }
 
-    public void setAdversary(String adversary) {
-        this.adversary = adversary;
+    public void setAdversary1(String adversary1) {
+        this.adversary1 = adversary1;
+    }
+
+    public String getAdversary2() {
+        return adversary2;
+    }
+
+    public void setAdversary2(String adversary2) {
+        this.adversary2 = adversary2;
     }
 
     public Integer getBet() {
@@ -60,5 +75,21 @@ public class Match {
 
     public void setGame(String game) {
         this.game = game;
+    }
+
+    public String getNumMatches() {
+        return numMatches;
+    }
+
+    public void setNumMatches(String numMatches) {
+        this.numMatches = numMatches;
+    }
+
+    public String getObservations() {
+        return observations;
+    }
+
+    public void setObservations(String observations) {
+        this.observations = observations;
     }
 }

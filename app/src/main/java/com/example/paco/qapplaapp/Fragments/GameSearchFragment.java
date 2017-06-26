@@ -37,6 +37,12 @@ import com.example.paco.qapplaapp.collapse.Radio;
 import com.example.paco.qapplaapp.collapse.RecyclerViewAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
@@ -78,12 +84,22 @@ public class GameSearchFragment extends Fragment {
     RecyclerView recyclerView;
     private RecyclerViewAdapter adapter;
 
+    /** FIREBASE **/
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mUsersDatabaseReference;
+
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.layout_game_search, container, false);
 
         mContext = getActivity();
+
+        /** FIREBASE **/
+        firebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mUsersDatabaseReference = mFirebaseDatabase.getReference().child("Users");
 
 
        /* stringArrayList = new ArrayList<>();
@@ -300,6 +316,24 @@ public class GameSearchFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_game, menu);
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+    public void retrieveUserData(String Uid){
+
+        mUsersDatabaseReference.child(Uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String userName = (String) dataSnapshot.child("userName").getValue();
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

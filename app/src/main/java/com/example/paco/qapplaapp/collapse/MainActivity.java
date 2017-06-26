@@ -16,12 +16,20 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.paco.qapplaapp.Fragments.Matches.DialogCreateMatches;
 import com.example.paco.qapplaapp.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +51,17 @@ public class MainActivity extends Fragment {
 
     private RecyclerViewAdapter adapter;
 
+    TextView tvUserName;
+
+
+/**FIREBASE DATA**/
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mUsersDatabaseReference;
+
+
+
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle sevedInstanceState){
         final View view = inflater.inflate(R.layout.activity_collapse, container, false);
 
@@ -55,6 +74,19 @@ public class MainActivity extends Fragment {
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         toolbar.setTitle(null);
         setHasOptionsMenu(true);
+
+        tvUserName = (TextView) view.findViewById(R.id.tvUserName);
+
+       /**FIREBASE DATA**/
+        firebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mUsersDatabaseReference = mFirebaseDatabase.getReference().child("Users");
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        if (user != null) {
+            String userUid = firebaseAuth.getCurrentUser().getUid();
+            retrieveUserData(userUid);
+        }
 
 
 
@@ -132,6 +164,24 @@ public class MainActivity extends Fragment {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+
+    public void retrieveUserData(String Uid){
+
+        mUsersDatabaseReference.child(Uid).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String userName = (String) dataSnapshot.child("userName").getValue();
+                //Toast.makeText(mContext, userName, Toast.LENGTH_SHORT).show();
+                tvUserName.setText(userName);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paco.qapplaapp.Registro.GamerTagActivity"
+    android:background="@drawable/gradient"
+    android:padding="@dimen/activity_horizontal_margin">
+
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/ojosbrillo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView29"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Enlaza tus cuentas"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorAccent"
+        android:layout_below="@+id/textView34"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="29dp"
+        android:id="@+id/textInputLayout10">
+
+        <EditText
+            android:id="@+id/xboxTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Xbox Live Gamertag"
+            android:textColor="@color/colorAccent"
+            android:singleLine="true"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/colorAccent"
+        android:id="@+id/textInputLayout8"
+        android:layout_below="@+id/textInputLayout10"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/psnTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PSN Gamertag"
+            android:textColor="@color/colorAccent"
+            android:singleLine="true"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:textColorHint="@color/colorAccent"
+        android:id="@+id/textInputLayout9"
+        android:layout_below="@+id/textInputLayout8"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/battleTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Battlenet Tag"
+            android:textColor="@color/colorAccent"
+            android:singleLine="true"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:textColorHint="@color/colorAccent"
+        android:layout_below="@+id/textInputLayout9"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/textInputLayout11">
+
+        <EditText
+            android:id="@+id/lolTag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="LoL Username"
+            android:textColor="@color/colorAccent"
+            android:singleLine="true"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btEnlazar"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp"
+        android:text="Enlazar"
+        android:background="@drawable/round_button"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/tag"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignTop="@+id/textInputLayout10"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="11dp" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:srcCompat="@drawable/tag"
+        android:layout_marginBottom="11dp"
+        android:layout_alignBottom="@+id/textInputLayout11"
+        android:layout_alignLeft="@+id/imageView34"
+        android:layout_alignStart="@+id/imageView34" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textInputLayout11"
+        android:layout_alignLeft="@+id/imageView32"
+        android:layout_alignStart="@+id/imageView32"
+        android:layout_marginBottom="7dp"
+        app:srcCompat="@drawable/tag" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textInputLayout9"
+        android:layout_alignLeft="@+id/imageView30"
+        android:layout_alignStart="@+id/imageView30"
+        android:layout_marginBottom="9dp"
+        app:srcCompat="@drawable/tag" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/textInputLayout9"
+        android:layout_alignLeft="@+id/imageView30"
+        android:layout_alignStart="@+id/imageView30"
+        android:layout_marginBottom="9dp"
+        app:srcCompat="@drawable/tag" />
+
+
+</RelativeLayout>

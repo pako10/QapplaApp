@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paco.qapplaapp.Registro.WelcomeActivity"
+    android:background="@drawable/gradient">
+
+
+    <ImageView
+        android:id="@+id/imageView26"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        app:srcCompat="@drawable/ojosbrillo" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/imageView26"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        app:srcCompat="@drawable/qapla" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView27"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="Tu cuenta a sido creada"
+        android:textAlignment="textStart"
+        android:layout_gravity="start"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btIniciar"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:text="Iniciar Sesion"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:background="@drawable/round_button"/>
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="34dp"
+        app:srcCompat="@drawable/listo"
+        android:layout_above="@+id/btIniciar"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView36"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        android:text="Revisa tu bandeja de entrada"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@+id/textView35"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView37"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="exitosamente"
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="18sp"
+        android:layout_below="@+id/textView35"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView36"
+        android:layout_centerHorizontal="true"
+        android:text="para verificar tu cuenta de correo"
+        android:textColor="@color/colorWhite"/>
+
+
+</RelativeLayout>

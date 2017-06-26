@@ -54,7 +54,7 @@
                     android:id="@+id/imageView8"
                     android:layout_width="150dp"
                     android:layout_height="100dp"
-                    app:srcCompat="@drawable/fifa" />
+                    app:srcCompat="@drawable/fifalog" />
 
 
                 <TextView

@@ -1,29 +1,24 @@
-package com.example.paco.qapplaapp;
+package com.example.paco.qapplaapp.Registro;
 
-import android.animation.Animator;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Patterns;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.paco.qapplaapp.MainActivity;
 import com.example.paco.qapplaapp.Objects.GamerUser;
+import com.example.paco.qapplaapp.R;
 import com.example.paco.qapplaapp.Utils.Connectivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -38,9 +33,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import static android.R.id.list;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -102,6 +94,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this,RegistryActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -111,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this,MainActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 
@@ -131,6 +125,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!task.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Autentification failed:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                    alertErrorData("Contraseña o Correo incorrectos");
                 }
 
                 if (user != null) {
@@ -138,7 +133,8 @@ public class LoginActivity extends AppCompatActivity {
                     boolean verified = user.isEmailVerified();
                     Toast.makeText(LoginActivity.this, String.valueOf(verified), Toast.LENGTH_LONG).show();
                     if (!verified){
-                        Toast.makeText(LoginActivity.this, "Necesitas confirmar tu cuenta", Toast.LENGTH_SHORT).show();
+
+                        alertErrorData("Necesitas confirmar tu cuenta");
                         FirebaseAuth.getInstance().signOut();
                     }else if (verified){
 
@@ -148,7 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                         auntenticar(userUid);
                         Intent i = new Intent(LoginActivity.this,MainActivity.class);
                         startActivity(i);
-                        Toast.makeText(LoginActivity.this, userUid, Toast.LENGTH_LONG).show();
+                        finish();
                     }
                 }
 
@@ -229,6 +225,8 @@ public class LoginActivity extends AppCompatActivity {
         alert = builder.create();
         alert.show();
     }
+
+
 
 
 

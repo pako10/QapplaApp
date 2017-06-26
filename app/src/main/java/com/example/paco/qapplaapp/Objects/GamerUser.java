@@ -7,31 +7,37 @@ import java.util.List;
  */
 
 public class GamerUser {
-    String id;
-    String UserName;
-    String Email;
-    int    Credits;
-    String City;
-    String Country;
-    List<String> Equips;
-    String Rank;
-    int Experience;
-    List<String> Games; //Cada que se agrega un juego en la base de juegos hacemos un barrido y por cada juego tomamos el valor de Users activos y le sumamos 1
+    private String id;
+    private String UserName;
+    private String Email;
+    private int    Credits;
+    private String City;
+    private String Country;
+    private List<String> Equips;
+    private String Rank; /** SE CAMBIA POR NIVEL**/
+    private int Experience;
+    private List<String> Games; //Cada que se agrega un juego en la base de juegos hacemos un barrido y por cada juego tomamos el valor de Users activos y le sumamos 1
    // List<String> Matches; //UNA BD NUEVA CON EL INT DE EL MATCH CON TODOS LOS DETALLES O PONEMOS UN CHILD ADENTRO DE OTRO CHILD CON TODOS LOS MATCHES
-    List<String> Tournaments;
-    List<String> Friends;
+    private List<String> Tournaments;
+    private List<String> Friends;
     private Match match;
-    boolean status ;
+    private boolean status;
     private FriendRequest friendRequest;
-    int Wins;
-    int Losses;
-    String Bio; /**BIOGRAFIA O COMENTARIOS DE EL DUEÑO DE LA CUENTA*/
+    private int Wins;
+    private int Losses;
+    private String Bio; /**BIOGRAFIA O COMENTARIOS DE EL DUEÑO DE LA CUENTA*/
 
-    public GamerUser(){}
+    private String penalty;
+    private List<String> GamerTags;
+    private String searching;
+    private String photoUrl;
 
-    public GamerUser(String id, String userName, String email, int credits, String city, String country, List<String> equips, String rank,
-                     int experience, List<String> games, List<String> tournaments, List<String> friends, Match match,
-                     boolean status, FriendRequest friendRequest, int wins, int losses, String bio) {
+    public GamerUser() {
+    }
+
+    public GamerUser(String id, String userName, String email, int credits, String city, String country, List<String> equips, String rank, int experience,
+                     List<String> games, List<String> tournaments, List<String> friends, Match match, boolean status, FriendRequest friendRequest, int wins, int losses,
+                     String bio, String penalty, List<String> gamerTags, String searching, String photoUrl) {
         this.id = id;
         UserName = userName;
         Email = email;
@@ -50,6 +56,10 @@ public class GamerUser {
         Wins = wins;
         Losses = losses;
         Bio = bio;
+        this.penalty = penalty;
+        GamerTags = gamerTags;
+        this.searching = searching;
+        this.photoUrl = photoUrl;
     }
 
     public String getId() {
@@ -113,7 +123,7 @@ public class GamerUser {
     }
 
     public void setRank(String rank) {
-        this.Rank = rank;
+        Rank = rank;
     }
 
     public int getExperience() {
@@ -194,5 +204,37 @@ public class GamerUser {
 
     public void setBio(String bio) {
         Bio = bio;
+    }
+
+    public String getPenalty() {
+        return penalty;
+    }
+
+    public void setPenalty(String penalty) {
+        this.penalty = penalty;
+    }
+
+    public List<String> getGamerTags() {
+        return GamerTags;
+    }
+
+    public void setGamerTags(List<String> gamerTags) {
+        GamerTags = gamerTags;
+    }
+
+    public String getSearching() {
+        return searching;
+    }
+
+    public void setSearching(String searching) {
+        this.searching = searching;
+    }
+
+    public String getPhotoUrl() {
+        return photoUrl;
+    }
+
+    public void setPhotoUrl(String photoUrl) {
+        this.photoUrl = photoUrl;
     }
 }

@@ -100,4 +100,7 @@
     </string>
     <string name="title_activity_aver">Aver</string>
     <string name="title_activity_vea">vea</string>
+    <string name="title_activity_what_uplay">WhatUPlay</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_gamer_tag">GamerTagActivity</string>
 </resources>

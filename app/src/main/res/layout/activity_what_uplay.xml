@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paco.qapplaapp.Registro.WhatUPlay"
+    android:background="@drawable/gradient">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvBtGames"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            android:background="@color/darkBlue"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <RelativeLayout
+                android:id="@+id/rvSearchBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/ojosbrillo"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:text="¿Que Juegas?"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/imageView22"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/ps4"
+                    android:layout_alignTop="@+id/imageView24"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/xboxactivo"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toLeftOf="@+id/textView32"
+                    android:layout_toStartOf="@+id/textView32"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginEnd="30dp" />
+
+                <ImageView
+                    android:id="@+id/imageView25"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/pc"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/textView32"
+                    android:layout_toEndOf="@+id/textView32"
+                    android:layout_marginLeft="29dp"
+                    android:layout_marginStart="29dp" />
+
+                <TextView
+                    android:id="@+id/tvRegresar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Regresar"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rvBtGames"
+        android:layout_marginBottom="50dp"
+        android:padding="@dimen/activity_horizontal_margin">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/rvGamesXbox">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rvGearsXbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgSelectGearsXbox"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/gowlog" />
+
+            <TextView
+                android:id="@+id/tvGearsxbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectGearsXbox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="GOW 4"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rvFifaXbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+
+            <ImageView
+                android:id="@+id/imgSelectFifaXbox"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/fifalog" />
+
+
+            <TextView
+                android:id="@+id/tvFifaXbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectFifaXbox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="FIFA 17"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rvStreetXbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+
+            <ImageView
+                android:id="@+id/imgSelectHaloXbox"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/halolog" />
+
+
+            <TextView
+                android:id="@+id/tvHaloXbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectHaloXbox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:text="HALO"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rvOverwatchXbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvStreetXbox"
+            android:layout_alignLeft="@+id/rvStreetXbox"
+            android:layout_alignStart="@+id/rvStreetXbox"
+            android:layout_marginTop="14dp">
+
+            <ImageView
+                android:id="@+id/imgSelectOverXbox"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/overlog" />
+
+
+            <TextView
+                android:id="@+id/tvOverXbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectOverXbox"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:text="OVERWATCH"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rvGamesPs4"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rvFifaPs4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="33dp"
+            android:layout_marginEnd="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/rvStreetPs4"
+            android:layout_toStartOf="@+id/rvStreetPs4">
+
+            <ImageView
+                android:id="@+id/imgSelectFifaPs4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/fifalog"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/tvFifaPs4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectFifaPs4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:text="Fifa"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rvStreetPs4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="64dp"
+            android:layout_marginEnd="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+
+            <ImageView
+                android:id="@+id/imgSelectOverPs4"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:srcCompat="@drawable/overlog" />
+
+
+            <TextView
+                android:id="@+id/tvOverPs4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgSelectOverPs4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:fontFamily="sans-serif"
+                android:text="Overwatch"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/textColor"/>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rvGamesPc"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/rvLolPc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/imgSelectOverPc"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/overlog" />
+
+
+                <TextView
+                    android:id="@+id/tvLolPc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgSelectOverPc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="OVERWATCH"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColor"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rvHearthStonePc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+
+                <ImageView
+                    android:id="@+id/imgSelectHearth"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/hearthlog" />
+
+
+                <TextView
+                    android:id="@+id/tvHearthPc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgSelectHearth"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="HEARTHSTONE"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rvCsPc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/rvOwerwatchPc"
+                android:layout_toEndOf="@+id/rvOwerwatchPc">
+
+
+                <ImageView
+                    android:id="@+id/imgSelectGowPc"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/gowlog" />
+
+
+                <TextView
+                    android:id="@+id/tvGearsPc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgSelectGowPc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="GOW 4"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColor"/>
+
+
+
+            </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:id="@+id/rvFifaPc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rvLolPc"
+                android:layout_toLeftOf="@+id/rvOwerwatchPc"
+                android:layout_toStartOf="@+id/rvOwerwatchPc"
+                android:layout_marginTop="16dp">
+
+
+                <ImageView
+                    android:id="@+id/imgSelectHaloPc"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/halolog" />
+
+
+                <TextView
+                    android:id="@+id/tvHaloPc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgSelectHaloPc"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="HALO"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColor"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rvOwerwatchPc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/imgSelectLol"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:srcCompat="@drawable/lolog" />
+
+
+                <TextView
+                    android:id="@+id/tvOverPc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgSelectLol"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="LOL"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColor"/>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/btOmitr"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="saltar"
+        android:background="@drawable/round_button"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btSiguiente"
+        android:layout_width="120dp"
+        android:layout_height="35dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/btOmitr"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:text="Siguiente"
+        android:background="@drawable/round_button"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>

@@ -242,11 +242,14 @@ public class MainActivity extends AppCompatActivity {
     public void createMatch(){
         String date = "13/04/2017";
         String hour = "14:00";
-        String adversary = "HaloMaste";
+        String adversary1 = "HaloMaste";
+        String adversary2 = "mamaGame";
         Integer bet = 100;
         String game = "Halo";
+        String numMatches = "3-5";
+        String observations = "Observaciones";
 
-        Match match = new Match(date,hour,adversary,bet,game);
+        Match match = new Match(date,hour,adversary1,adversary2,bet,game,numMatches,observations);
 
         mUsersDatabaseReference.child("fXNKIYlcJ1WafMTBC0piEWLpcn33").child("match").push().setValue(match);
 
