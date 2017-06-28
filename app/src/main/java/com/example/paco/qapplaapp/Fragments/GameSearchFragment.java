@@ -12,6 +12,7 @@ import android.graphics.drawable.ShapeDrawable;
 import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -30,6 +31,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.paco.qapplaapp.Objects.GamerUser;
 import com.example.paco.qapplaapp.Objects.QapplaUser;
 import com.example.paco.qapplaapp.Objects.RecyclerAdapter;
 import com.example.paco.qapplaapp.R;
@@ -102,28 +104,6 @@ public class GameSearchFragment extends Fragment {
         mUsersDatabaseReference = mFirebaseDatabase.getReference().child("Users");
 
 
-       /* stringArrayList = new ArrayList<>();
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
-        recyclerView.setHasFixedSize(true);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        recyclerView.setLayoutManager(layoutManager);
-
-
-        adapter = new RecyclerAdapter(mContext);
-        recyclerView.setAdapter(adapter);
-
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        stringArrayList.add(new QapplaUser("haloMaster"));
-        adapter.setFriendsList(stringArrayList);*/
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mContext);
@@ -132,21 +112,7 @@ public class GameSearchFragment extends Fragment {
 
         adapter = new RecyclerViewAdapter(mContext);
         recyclerView.setAdapter(adapter);
-        List<Radio> radioList = new ArrayList<>();
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
 
-        adapter.setRadioList(radioList);
 
 
 
@@ -163,7 +129,9 @@ public class GameSearchFragment extends Fragment {
         imgSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Busqueda", Toast.LENGTH_SHORT).show();
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                DialogSearchFragment frag = new DialogSearchFragment();
+                frag.show(ft,"txn_tag");
             }
         });
 
@@ -172,10 +140,12 @@ public class GameSearchFragment extends Fragment {
 
         Intent intent = getActivity().getIntent();
 
-
         if (getArguments() != null) {
             game = getArguments().getString("game");
-            String platform = getArguments().getString("platform");
+            String gameId = getArguments().getString("code");
+
+            Toast.makeText(mContext, gameId, Toast.LENGTH_SHORT).show();
+            retrieveUserData(gameId);
 
             Toast.makeText(mContext, game, Toast.LENGTH_SHORT).show();
 
@@ -319,13 +289,21 @@ public class GameSearchFragment extends Fragment {
     }
 
 
-    public void retrieveUserData(String Uid){
+    public void retrieveUserData(String gameId){
 
-        mUsersDatabaseReference.child(Uid).addValueEventListener(new ValueEventListener() {
+        mUsersDatabaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String userName = (String) dataSnapshot.child("userName").getValue();
+                Toast.makeText(mContext, dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+
+                for (DataSnapshot uniqueUserSnapshot : dataSnapshot.getChildren()) {
+                    List<String> games = new ArrayList<String>();
+                    games.add(String.valueOf(uniqueUserSnapshot.child("games")));
+
+                    Toast.makeText(mContext, games.toString(), Toast.LENGTH_SHORT).show();
+
+                }
 
             }
 

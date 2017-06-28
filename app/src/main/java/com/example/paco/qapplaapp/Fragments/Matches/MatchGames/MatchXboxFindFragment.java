@@ -49,6 +49,8 @@ public class MatchXboxFindFragment extends Fragment {
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
         stringArrayList.add(new QapplaUser("haloMaster"));
+        stringArrayList.add(new QapplaUser("haloMaster"));
+        stringArrayList.add(new QapplaUser("haloMaster"));
         adapter.setFriendsList(stringArrayList);
 
         return view;

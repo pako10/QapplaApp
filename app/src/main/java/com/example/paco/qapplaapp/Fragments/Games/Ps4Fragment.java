@@ -88,7 +88,7 @@ public class Ps4Fragment extends Fragment {
                 fragmentTransaction.commit();*/
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","psOver");
                 i.putExtra("game", "overwatch");
                 startActivity(i);
                 getActivity().finish();
@@ -100,7 +100,7 @@ public class Ps4Fragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","psFifa");
                 i.putExtra("game", "fifa");
                 startActivity(i);
                 getActivity().finish();

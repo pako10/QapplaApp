@@ -96,7 +96,7 @@ public class XboxFragment extends Fragment {
                 fragmentTransaction.commit();*/
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","xOver");
                 i.putExtra("game", "overwatch");
                 startActivity(i);
                 getActivity().finish();
@@ -108,7 +108,7 @@ public class XboxFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","xFifa");
                 i.putExtra("game", "fifa");
                 startActivity(i);
                 getActivity().finish();
@@ -120,7 +120,7 @@ public class XboxFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","xGears");
                 i.putExtra("game","gow");
                 startActivity(i);
                 getActivity().finish();
@@ -135,7 +135,7 @@ public class XboxFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","xHalo");
                 i.putExtra("game", "halo");
                 startActivity(i);
                 getActivity().finish();

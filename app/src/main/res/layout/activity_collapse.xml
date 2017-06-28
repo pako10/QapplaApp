@@ -6,12 +6,63 @@
     android:layout_height="match_parent"
     xmlns:fab="http://schemas.android.com/apk/res-auto">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:fillViewport="true" />
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout5">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    android:fillViewport="true"
+                    android:nestedScrollingEnabled="false"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Agregar Equipo"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView35"
+                    android:layout_centerHorizontal="true" />
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:tint="@color/black"
+                    android:layout_marginTop="13dp"
+                    app:srcCompat="@drawable/ic_add"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -343,15 +394,7 @@
             app:fab_colorNormal="@color/accent"
             app:fab_colorPressed="@color/accent"/>
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/material_design_floating_action_menu_item3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/fab_add"
-            fab:fab_label="Crear Torneo"
-            fab:fab_size="mini"
-            app:fab_colorNormal="@color/accent"
-            app:fab_colorPressed="@color/accent"/>
+
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/material_design_floating_action_menu_item4"

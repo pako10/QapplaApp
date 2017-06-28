@@ -76,7 +76,7 @@ public class PcFragment extends Fragment {
             public void onClick(View view) {
 
                 Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
+                bundle.putString("code", "pGears");
                 bundle.putString("game", "gow");
 
                 /*GameSearchFragment gameSearchFragment = new GameSearchFragment();
@@ -87,7 +87,7 @@ public class PcFragment extends Fragment {
                         .commit();*/
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","pGears");
                 i.putExtra("game","gow");
                 startActivity(i);
                 getActivity().finish();
@@ -108,7 +108,7 @@ public class PcFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","pHearth");
                 i.putExtra("game", "hearth");
                 startActivity(i);
                 getActivity().finish();
@@ -123,7 +123,7 @@ public class PcFragment extends Fragment {
             public void onClick(View view) {
 
                 Bundle bundle = new Bundle();
-                bundle.putString("platform", "pc");
+                bundle.putString("code", "pOver");
                 bundle.putString("game", "overwatch");
 
                 Intent i = new Intent(mContext, MainActivity.class);
@@ -139,7 +139,7 @@ public class PcFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","pHalo");
                 i.putExtra("game", "halo");
                 startActivity(i);
                 getActivity().finish();
@@ -152,7 +152,7 @@ public class PcFragment extends Fragment {
             public void onClick(View view) {
 
                 Intent i = new Intent(mContext, MainActivity.class);
-                i.putExtra("platform","pc");
+                i.putExtra("code","pcLol");
                 i.putExtra("game", "lol");
                 startActivity(i);
                 getActivity().finish();
