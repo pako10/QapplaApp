@@ -14,7 +14,7 @@ public class GamerUser {
     private String City;
     private String Country;
     private List<String> Equips;
-    private String Rank; /** SE CAMBIA POR NIVEL**/
+    private int Level; /** SE CAMBIA POR NIVEL**/
     private int Experience;
     private List<String> Games; //Cada que se agrega un juego en la base de juegos hacemos un barrido y por cada juego tomamos el valor de Users activos y le sumamos 1
    // List<String> Matches; //UNA BD NUEVA CON EL INT DE EL MATCH CON TODOS LOS DETALLES O PONEMOS UN CHILD ADENTRO DE OTRO CHILD CON TODOS LOS MATCHES
@@ -35,7 +35,7 @@ public class GamerUser {
     public GamerUser() {
     }
 
-    public GamerUser(String id, String userName, String email, int credits, String city, String country, List<String> equips, String rank, int experience,
+    public GamerUser(String id, String userName, String email, int credits, String city, String country, List<String> equips, int level, int experience,
                      List<String> games, List<String> tournaments, List<String> friends, Match match, boolean status, FriendRequest friendRequest, int wins, int losses,
                      String bio, String penalty, List<String> gamerTags, String searching, String photoUrl) {
         this.id = id;
@@ -45,7 +45,7 @@ public class GamerUser {
         City = city;
         Country = country;
         Equips = equips;
-        Rank = rank;
+        Level = level;
         Experience = experience;
         Games = games;
         Tournaments = tournaments;
@@ -118,12 +118,12 @@ public class GamerUser {
         Equips = equips;
     }
 
-    public String getRank() {
-        return Rank;
+    public int getLevel() {
+        return Level;
     }
 
-    public void setRank(String rank) {
-        Rank = rank;
+    public void setLevel(int level) {
+        Level = level;
     }
 
     public int getExperience() {

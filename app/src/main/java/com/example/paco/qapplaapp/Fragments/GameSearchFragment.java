@@ -13,29 +13,23 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.paco.qapplaapp.Objects.GamerUser;
 import com.example.paco.qapplaapp.Objects.QapplaUser;
-import com.example.paco.qapplaapp.Objects.RecyclerAdapter;
 import com.example.paco.qapplaapp.R;
-import com.example.paco.qapplaapp.collapse.Radio;
+import com.example.paco.qapplaapp.Objects.Qapla;
 import com.example.paco.qapplaapp.collapse.RecyclerViewAdapter;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -45,13 +39,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static com.google.android.gms.R.id.toolbar;
 
 
 /**
@@ -92,6 +82,9 @@ public class GameSearchFragment extends Fragment {
     private DatabaseReference mUsersDatabaseReference;
 
 
+    List<Qapla> qaplaList;
+
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.layout_game_search, container, false);
@@ -112,6 +105,7 @@ public class GameSearchFragment extends Fragment {
 
         adapter = new RecyclerViewAdapter(mContext);
         recyclerView.setAdapter(adapter);
+        qaplaList = new ArrayList<>();
 
 
 
@@ -170,6 +164,8 @@ public class GameSearchFragment extends Fragment {
             }
         }else if (intent.getStringExtra("game") != null ){
             game = intent.getStringExtra("game");
+
+            retrieveUserData(game);
             if (game.equals("fifa")) {
                 imgGame.setImageResource(R.drawable.fifalog);
             }
@@ -291,19 +287,43 @@ public class GameSearchFragment extends Fragment {
 
     public void retrieveUserData(String gameId){
 
-        mUsersDatabaseReference.addValueEventListener(new ValueEventListener() {
+
+        mUsersDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                Toast.makeText(mContext, dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, dataSnapshot.toString(), Toast.LENGTH_SHORT).show();
 
                 for (DataSnapshot uniqueUserSnapshot : dataSnapshot.getChildren()) {
-                    List<String> games = new ArrayList<String>();
-                    games.add(String.valueOf(uniqueUserSnapshot.child("games")));
+                    GamerUser user = uniqueUserSnapshot.getValue(GamerUser.class);
 
-                    Toast.makeText(mContext, games.toString(), Toast.LENGTH_SHORT).show();
+                  // Toast.makeText(mContext, user.getUserName(), Toast.LENGTH_SHORT).show();
 
+                    //String userName = (String) userSnapshot.child("userName").getValue();
+                    List<String> games = user.getGames();
+
+                    if (games != null) {
+
+                        for (int i = 0; i < games.size();i++){
+
+                            if (games.get(i).equals("xOver")){
+
+                                String userWins = String.valueOf(user.getWins());
+                                String userLoses = String.valueOf(user.getLosses());
+                                String userLevel = String.valueOf(user.getLevel());
+                                String userBio = String.valueOf(user.getBio());
+
+                                qaplaList.add(new Qapla(user.getUserName(),userWins,userLoses,userLevel,userBio));
+
+                                //Toast.makeText(mContext, user.getUserName(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        //Toast.makeText(mContext, games.toString(), Toast.LENGTH_SHORT).show();
+                    }
+                    adapter.setQaplaList(qaplaList);
+                    adapter.notifyDataSetChanged();
                 }
+
 
             }
 

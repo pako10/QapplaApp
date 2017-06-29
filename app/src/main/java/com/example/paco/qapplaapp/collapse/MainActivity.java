@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.paco.qapplaapp.Fragments.Matches.DialogCreateMatches;
+import com.example.paco.qapplaapp.Objects.Qapla;
 import com.example.paco.qapplaapp.R;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
@@ -96,21 +97,21 @@ public class MainActivity extends Fragment {
 
         adapter = new RecyclerViewAdapter(mContext);
         recyclerView.setAdapter(adapter);
-        List<Radio> radioList = new ArrayList<>();
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
-        radioList.add(new Radio("HaloMaster", R.drawable.halo, "222"));
+        List<Qapla> qaplaList = new ArrayList<>();
+       /* qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));
+        qaplaList.add(new Qapla("HaloMaster", R.drawable.halo, "222"));*/
 
-        adapter.setRadioList(radioList);
+       // adapter.setQaplaList(qaplaList);
 
 
         materialDesignFAM = (FloatingActionMenu) view.findViewById(R.id.material_design_android_floating_action_menu1);

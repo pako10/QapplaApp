@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.example.paco.qapplaapp.Objects.Qapla;
 import com.example.paco.qapplaapp.R;
 
 import java.util.ArrayList;
@@ -23,15 +24,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     private Context context;
 
-    private List<Radio> radioList;
+    private List<Qapla> qaplaList;
 
     public RecyclerViewAdapter(Context context) {
         this.context = context;
-        radioList = new ArrayList<>();
+        qaplaList = new ArrayList<>();
     }
 
-    public void setRadioList(List<Radio> radioList){
-        this.radioList = radioList;
+    public void setQaplaList(List<Qapla> qaplaList){
+        this.qaplaList = qaplaList;
         notifyDataSetChanged();
     }
 
@@ -45,30 +46,30 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(RadioViewHolder holder, final int position) {
 
-        Radio radio = radioList.get(position);
-        holder.textViewRadioName.setText(radio.getRadioName());
-        holder.textViewRadioDial.setText("(" + radio.getRadioDial() + ")");
-        holder.textViewRadioTags.setText("333");
+        Qapla qapla = qaplaList.get(position);
+        holder.tvUserName.setText(qapla.getUserName());
+        holder.tvWins.setText(qapla.getUserWins());
+        holder.tvLoses.setText(qapla.getUserLoses());
     }
 
     @Override
     public int getItemCount() {
-        return radioList.size();
+        return qaplaList.size();
     }
 
     public class RadioViewHolder extends RecyclerView.ViewHolder{
 
-        TextView textViewRadioName;
-        TextView textViewRadioDial;
-        TextView textViewRadioTags;
-        ImageView imageViewRadioLogo;
+        TextView tvUserName;
+        TextView tvWins;
+        TextView tvLoses;
+        ImageView imgLogo;
 
         public RadioViewHolder(View itemView) {
             super(itemView);
-            textViewRadioName = (TextView) itemView.findViewById(R.id.tvUserNameSearch);
-            textViewRadioDial = (TextView) itemView.findViewById(R.id.tvWins);
-            textViewRadioTags = (TextView) itemView.findViewById(R.id.tvLose);
-            imageViewRadioLogo = (ImageView) itemView.findViewById(R.id.imgUserSearch);
+            tvUserName = (TextView) itemView.findViewById(R.id.tvUserNameSearch);
+            tvWins = (TextView) itemView.findViewById(R.id.tvWins);
+            tvLoses = (TextView) itemView.findViewById(R.id.tvLose);
+            imgLogo = (ImageView) itemView.findViewById(R.id.imgUserSearch);
 
 
         }

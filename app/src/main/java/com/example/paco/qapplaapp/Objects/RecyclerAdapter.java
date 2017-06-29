@@ -1,6 +1,5 @@
 package com.example.paco.qapplaapp.Objects;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -9,11 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.paco.qapplaapp.Fragments.GameSearchFragment;
 import com.example.paco.qapplaapp.R;
-import com.example.paco.qapplaapp.collapse.Radio;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 

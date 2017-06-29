@@ -210,7 +210,7 @@ public class RegistryActivity extends AppCompatActivity {
         int credits = 0;
         String country = "Mexico";
         List<String> equip = Arrays.asList();
-        String rank = "Bronce";
+        int level = 0;
         int experience = 0;
         List<String> games = Arrays.asList();/**CREA UNA LISTA VACIA ESPERANDO LA LISTA DE JUEGOS**/
         List<String> tournaments = Arrays.asList();/**CREA UNA LISTA VACIA ESPERANDO LA LISTA DE ID DE TORNEOS**/
@@ -231,7 +231,7 @@ public class RegistryActivity extends AppCompatActivity {
         Toast.makeText(this, "Se creo un usuario", Toast.LENGTH_SHORT).show();
         //String userUid = "examples";
 
-        GamerUser gamerUser = new GamerUser(userUid,user,email,credits,city,country,equip,rank,experience,games,tournaments,friends,match,status,friendRequest,wins,losses,biography,penalty,gamerTags,searching,photoUrl);
+        GamerUser gamerUser = new GamerUser(userUid,user,email,credits,city,country,equip,level,experience,games,tournaments,friends,match,status,friendRequest,wins,losses,biography,penalty,gamerTags,searching,photoUrl);
 
        /* DatabaseReference mnuevo = FirebaseDatabase.getInstance().getReference().child("Mensaje");
         mnuevo.push().setValue("SI mete este");*/
